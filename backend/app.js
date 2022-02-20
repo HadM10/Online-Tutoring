@@ -33,9 +33,9 @@ const requestLogger = (request, response, next) => {
 app.use(requestLogger)
 
 
-const movieRoutes = require('./Server/routes/moviesRoutes.js')
+// const Routes = require('./Server/routes/Routes.js')
 
-app.use('/movies', movieRoutes)
+// app.use('/', Routes)
 
 
 const errorHandler = (error, request, response, next) => {
