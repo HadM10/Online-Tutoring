@@ -4,7 +4,6 @@ const Schema = mongoose.Schema;
 
 // Users schema 
 const UsersSchema = new Schema({
-
     fname: {
         type: String,
         required: true,
@@ -54,10 +53,9 @@ const UsersSchema = new Schema({
         max: 45
     },
     userType: {
-        type: ObjectId,
+        type: mongoose.Schema.ObjectId,
+        ref: "UserType"
     },
-},
-    { timestamps: true }
-);
+}, { timestamps: true });
 
 module.exports = mongoose.model("Users", UsersSchema);
