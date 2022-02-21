@@ -7,6 +7,8 @@ const Chat = require('../models/Chat')
 exports.Chat = async (req, res) => {
   try {
     const Chats = await Chat.find()
+    .populate({ path: 'sender', model: 'Users' })
+    .populate({ path: 'receiver', model: 'Users' })
     res.json(Chats);
   } catch (error) {
     res.status(404).json({ message: error })

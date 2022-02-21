@@ -7,6 +7,8 @@ const Lesson = require('../models/Lesson')
 exports.Lesson = async (req, res) => {
   try {
     const Lessons = await Lesson.find()
+    .populate({ path: 'tutorial', model: 'Tutorial' })
+    .populate({ path: 'trainee.userId', model: 'Users' })
     res.json(Lessons);
   } catch (error) {
     res.status(404).json({ message: error })
