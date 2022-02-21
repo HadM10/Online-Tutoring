@@ -5,15 +5,15 @@ const trainerSchema = new mongoose.Schema({
         type:String,
         required: true,
         uppercase: true,
-        min: 4,
-        max: 255 },
+        min: 3,
+        max: 25 },
 
     speciality: {
         type: String,
         required: true,
         uppercase: true,
-        min: 4,
-        max: 255 } ,
+        min: 3,
+        max: 25 } ,
 
     meetingUrl: {
         type: String,
