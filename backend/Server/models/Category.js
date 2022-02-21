@@ -7,7 +7,7 @@ const CategorySchema = new mongoose.Schema({
 
     photo: {
         type: String,
-        equired: true
+        required: true
             },
     CategoryId: {
         type: mongoose.SchemaTypes.ObjectId,

@@ -9,7 +9,7 @@ const chatSchema = new mongoose.Schema({
         type: mongoose.Schema.ObjectId,
         ref: "Users"
     },
-    dateTime: dateTime,
+    dateTime: Date,
     seen: Boolean,
     message: Text
 }, { timestamps: true })
