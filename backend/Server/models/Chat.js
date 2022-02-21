@@ -11,7 +11,7 @@ const chatSchema = new mongoose.Schema({
     },
     dateTime: Date,
     seen: Boolean,
-    message: Text
+    message: String
 }, { timestamps: true })
 
 
