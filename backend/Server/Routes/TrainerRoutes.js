@@ -1,9 +1,16 @@
 const express = require('express')
+
 const router = express.Router()
-const TrainerController = require('../controllers/TrainerController');
 
-// get all trainer profile and post
+const trainerController = require('../Controllers/trainerController');
 
-router.route('/Trainer')
-    .get(TrainerController.ProfileTrainer)
-    .post(Trainer.uploadPhoto, Trainer.addTrainer)
+router.route('/')
+    .get(trainerController.Trainer)
+    .post(trainerController.addTrainer)
+
+router.route('/:id')
+    .delete(trainerController.deleteTrainer)
+    .put(trainerController.editTrainer)
+
+
+module.exports = router
