@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+
 const SubCategorySchema = new mongoose.Schema({
     SubCategoryId: {
         type: mongoose.SchemaTypes.ObjectId,
@@ -9,8 +10,6 @@ const SubCategorySchema = new mongoose.Schema({
         required: true
             },
 
-    timestamps: true 
-
-})
+}, {timestamps: true})
 
 module.exports = mongoose.model('SubCategory', SubCategorySchema)

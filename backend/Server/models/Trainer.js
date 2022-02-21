@@ -1,9 +1,6 @@
 const mongoose = require('mongoose');
-const ProfileTrainerSchema = new mongoose.Schema({
-    ProfileTrainerId: {
-        type: mongoose.SchemaTypes.ObjectId,
-        ref: "User" },
 
+const trainerSchema = new mongoose.Schema({
     certificate: {
         type:String,
         required: true,
@@ -18,13 +15,10 @@ const ProfileTrainerSchema = new mongoose.Schema({
         min: 4,
         max: 255 } ,
 
-    MeetingUrl: {
+    meetingUrl: {
         type: String,
         required: true
-    },
+    }
+}, {timestamps: true})
 
-    timestamps: true 
-
-})
-
-module.exports = mongoose.model('ProfileTrainer', ProfileTrainerSchema)
+module.exports = mongoose.model('Trainer', trainerSchema)
