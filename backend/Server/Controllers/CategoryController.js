@@ -1,5 +1,5 @@
 //CONNECT TO DATABASE
-require('../connectDB')
+require('../models/connectDB')
 const Category = require('../models/Category')
 
 //GET CATEGORIES

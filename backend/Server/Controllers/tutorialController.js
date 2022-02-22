@@ -1,5 +1,5 @@
 //CONNECT TO DATABASE
-require('../connectDB')
+require('../models/connectDB')
 const useUpload = require('../upload/uploadPhoto')
 const Tutorial = require('../models/Tutorial')
 

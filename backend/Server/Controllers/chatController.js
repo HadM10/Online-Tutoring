@@ -1,5 +1,5 @@
 //CONNECT TO DATABASE
-require('../connectDB')
+require('../models/connectDB')
 
 const Chat = require('../models/Chat')
 

@@ -3,10 +3,8 @@ require('../models/connectDB')
 const User = require("../models/Users");
 const useUpload = require('../upload/uploadPhoto')
 
-
-exports.uploadPhoto = useUpload.upload.single('photo')
 module.exports = {
-
+  uploadPhoto: useUpload.upload.single('photo'),
   createUser: async (req, res) => {       // POST
     const user = new User(req.body);
     await user.save();

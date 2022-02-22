@@ -1,5 +1,5 @@
 //CONNECT TO DATABASE
-require('../connectDB')
+require('../models/connectDB')
 const subCategory = require('../models/SubCategory')
 
 //GET SUBCATEGORIES
