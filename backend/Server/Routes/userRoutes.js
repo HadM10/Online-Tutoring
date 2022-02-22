@@ -5,7 +5,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const { registerValidation, loginValidation } = require("../validation"); // to validate information
 
-router.post("/register", userController.uploadPhoto, async (req, res) => {
+router.post("/register", async (req, res) => {
   //Lets validate the data before we input user
   const { error } = registerValidation(req.body);
   if (error) return res.status(400).send({ message: error.message });

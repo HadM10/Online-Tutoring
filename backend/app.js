@@ -40,6 +40,7 @@ const tutorialRoutes = require('./Server/routes/tutorialRoutes.js')
 const lessonRoutes = require('./Server/routes/lessonRoutes.js')
 const trainerRoutes = require('./Server/routes/trainerRoutes.js')
 const chatRoutes = require('./Server/routes/chatRoutes')
+const profilepicRoutes = require('./Server/routes/profilepicRoutes')
 
 app.use('/users', userRoutes)
 app.use('/categories', categoryRoutes)
@@ -48,6 +49,7 @@ app.use('/tutorials', tutorialRoutes)
 app.use('/lessons', lessonRoutes)
 app.use('/trainers', trainerRoutes)
 app.use('/chats', chatRoutes)
+app.use('/profilepic', profilepicRoutes)
 
 
 
