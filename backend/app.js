@@ -32,10 +32,23 @@ const requestLogger = (request, response, next) => {
 }
 app.use(requestLogger)
 
+//USING ROUTES
+const userRoutes = require('./Server/routes/userRoutes.js')
+const categoryRoutes = require('./Server/routes/categoryRoutes.js')
+const subCategoryRoutes = require('./Server/routes/subCategoryRoutes.js')
+const tutorialRoutes = require('./Server/routes/tutorialRoutes.js')
+const lessonRoutes = require('./Server/routes/lessonRoutes.js')
+const trainerRoutes = require('./Server/routes/trainerRoutes.js')
+const chatRoutes = require('./Server/routes/chatRoutes')
 
-// const Routes = require('./Server/routes/Routes.js')
+app.use('/users', userRoutes)
+app.use('/categories', categoryRoutes)
+app.use('/subCategories', subCategoryRoutes)
+app.use('/tutorials', tutorialRoutes)
+app.use('/lessons', lessonRoutes)
+app.use('/trainers', trainerRoutes)
+app.use('/chats', chatRoutes)
 
-// app.use('/', Routes)
 
 
 const errorHandler = (error, request, response, next) => {
