@@ -1,6 +1,6 @@
 
 require('../models/connectDB')
-const User = require("../models/User");
+const User = require("../models/Users");
 const useUpload = require('../upload/uploadPhoto')
 
 
