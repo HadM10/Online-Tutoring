@@ -115,7 +115,7 @@ router.get("/loggedIn", (req, res) => {
 const userController = require("../controllers/usercontroller.js");
 
 // CRUD for users
-router.route("/").get(userController.findUsers).post(userController.createUser);
+router.route("/").post(userController.createUser);
 router
   .route("/:id")
   .get(userController.findUser)

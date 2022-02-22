@@ -3,12 +3,13 @@ require('../connectDB')
 
 const Chat = require('../models/Chat')
 
-//GET CHATS
+//GET CHATS BY USER
 exports.Chat = async (req, res) => {
   try {
-    const Chats = await Chat.find()
-    .populate({ path: 'sender', model: 'Users' })
-    .populate({ path: 'receiver', model: 'Users' })
+    const userId = req.body.userId
+    const Chats = await Chat.find({ sender: userId })
+      .populate({ path: 'sender', model: 'Users' })
+      .populate({ path: 'receiver', model: 'Users' })
     res.json(Chats);
   } catch (error) {
     res.status(404).json({ message: error })
@@ -44,7 +45,7 @@ exports.deleteChat = async (req, res) => {
   }
 }
 
-//EDIT OR UPDATE CHAT
+//EDIT OR UPDATE CHAT NOT REQUIRED
 exports.editChat = async (req, res) => {
   const ChatId = req.params.id;
   const newChat = {

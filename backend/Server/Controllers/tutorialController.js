@@ -1,14 +1,15 @@
 //CONNECT TO DATABASE
 require('../connectDB')
-
+const useUpload = require('../upload/uploadPhoto')
 const Tutorial = require('../models/Tutorial')
 
-//GET TUTORIALS
+//GET TUTORIALS BY category
 exports.Tutorial = async (req, res) => {
   try {
-    const tutorials = await Tutorial.find()
-    .populate({ path: 'trainerId', model: 'Users' })
-    .populate({ path: 'subCategories', model: 'SubCategories' })
+    const subCategory = req.body.subCategory
+    const tutorials = await Tutorial.find({ subCategories: subCategory })
+      .populate({ path: 'trainerId', model: 'Users' })
+      .populate({ path: 'subCategories', model: 'SubCategories' })
     res.json(tutorials);
   } catch (error) {
     res.status(404).json({ message: error })
@@ -16,12 +17,14 @@ exports.Tutorial = async (req, res) => {
 }
 
 //ADD OR POST TUTORIAL
+exports.uploadPhoto = useUpload.upload.single('photo')
 exports.addTutorial = async (req, res) => {
+  const url = req.protocol + '://' + req.get('host')
   const newTutorial = new Tutorial({
     title: req.body.title,
     price: req.body.price,
     pricePerLesson: req.body.pricePerLesson,
-    photo: req.body.photo,
+    photo: url + '/public/' + req.file.filename,
     trainerId: req.body.trainerId,
     subCategories: req.body.subCategories,
     dateTime: req.body.dateTime
@@ -47,6 +50,7 @@ exports.deleteTutorial = async (req, res) => {
 }
 
 //EDIT OR UPDATE TUTORIAL
+//PHOTO
 exports.editTutorial = async (req, res) => {
   const tutorialId = req.params.id;
   const newTutorial = {

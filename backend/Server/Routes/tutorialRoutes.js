@@ -6,7 +6,7 @@ const tutorialController = require('../Controllers/tutorialController');
 
 router.route('/')
     .get(tutorialController.Tutorial)
-    .post(tutorialController.addTutorial)
+    .post(tutorialController.uploadPhoto, tutorialController.addTutorial)
 
 router.route('/:id')
     .delete(tutorialController.deleteTutorial)

@@ -32,7 +32,7 @@ const UsersSchema = new Schema({
     age: {
         type: Number,
         required: true,
-        max: 3
+        max: 2
     },
     password: {
         type: String,
@@ -41,7 +41,7 @@ const UsersSchema = new Schema({
         max: 255      // max 255 because we may later decide to encrypt the password
     },
     phone: {
-        type: Number,
+        type: String,
         required: True,
         minimum: 8,
         max: 45

@@ -6,20 +6,22 @@ const subCategory = require('../models/SubCategory')
 exports.subCategory = async (req, res) => {
   try {
     const subCategories = await subCategory.find()
-    .populate({ path: 'SubCategoryId', model: 'Category' })
+      .populate({ path: 'categoryId', model: 'Category' })
     res.json(subCategories);
   } catch (error) {
     res.status(404).json({ message: error })
   }
 }
 
+
+//NOT REQUIRED
 // ADD OR POST SUBCATEGORY
 exports.addsubCategory = async (req, res) => {
   const newsubCategory = new subCategory({
     name: req.body.name,
     photo: req.body.photo,
-    subCategoryId: req.body.subCategoryId
-    
+    categoryId: req.body.categoryId
+
   });
 
   try {
@@ -47,7 +49,7 @@ exports.editsubCategory = async (req, res) => {
   const newsubCategory = {
     name: req.body.name,
     photo: req.body.photo,
-    subCategoryId: req.body.subCategoryId
+    categoryId: req.body.categoryId
   };
   try {
     const updatesubCategory = await subCategory.findByIdAndUpdate({ _id: subCategoryId }, newsubCategory);

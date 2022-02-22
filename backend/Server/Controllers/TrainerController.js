@@ -1,9 +1,8 @@
 //CONNECT TO DATABASE
 require('../connectDB')
-
 const Trainer = require('../models/Trainer')
 
-//GET TRAINERS
+//GET TRAINERS  //NOT REUQUIRED
 exports.Trainer = async (req, res) => {
   try {
     const Trainers = await Trainer.find()
@@ -29,7 +28,7 @@ exports.addTrainer = async (req, res) => {
   }
 }
 
-//DELETE TRAINER
+//DELETE TRAINER //NOT REUQUIRED
 exports.deleteTrainer = async (req, res) => {
   const TrainerId = req.params.id;
   try {

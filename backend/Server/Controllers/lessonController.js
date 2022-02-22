@@ -3,12 +3,13 @@ require('../connectDB')
 
 const Lesson = require('../models/Lesson')
 
-//GET LESSONS
+//GET LESSONS FOR TUTORIAL
 exports.Lesson = async (req, res) => {
   try {
-    const Lessons = await Lesson.find()
-    .populate({ path: 'tutorial', model: 'Tutorial' })
-    .populate({ path: 'trainee.userId', model: 'Users' })
+    const tutorialId = req.body.tutorialId
+    const Lessons = await Lesson.find({ tutorial: tutorialId })
+      .populate({ path: 'tutorial', model: 'Tutorial' })
+      .populate({ path: 'trainee.userId', model: 'Users' })
     res.json(Lessons);
   } catch (error) {
     res.status(404).json({ message: error })

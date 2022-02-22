@@ -7,10 +7,10 @@ const registerValidation = (data) => {
         lname: Joi.string().min(3).max(25).required(),
         email: Joi.string().min(6).max(45).required().email(),
         photo: Joi.string(),
-        age: Joi.string().required(),
+        age: Joi.number().required(),
         password: Joi.string().min(6).max(255).required(),
-        phone: Joi.number().min(8).max(45).required(),
-        country: Joi.number().min(3).max(45).required()
+        phone: Joi.string().min(8).max(45).required(),
+        country: Joi.string().min(3).max(45).required()
     });
     return schema.validate(data);
 };

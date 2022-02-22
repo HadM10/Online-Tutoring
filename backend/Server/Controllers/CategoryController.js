@@ -6,20 +6,20 @@ const Category = require('../models/Category')
 exports.Category = async (req, res) => {
   try {
     const Categories = await Category.find()
-    .populate({ path: 'CategoryId', model: 'SubCategory' })
     res.json(Categories);
   } catch (error) {
     res.status(404).json({ message: error })
   }
 }
 
+
+
+// NOT REQUIRED
 // ADD OR POST CATEGORY
 exports.addCategory = async (req, res) => {
   const newCategory = new Category({
     name: req.body.name,
-    photo: req.body.photo,
-    CategoryId: req.body.CategoryId
-    
+    photo: req.body.photo
   });
 
   try {
@@ -46,8 +46,7 @@ exports.editCategory = async (req, res) => {
   const CategoryId = req.params.id;
   const newCategory = {
     name: req.body.name,
-    photo: req.body.photo,
-    CategoryId: req.body.CategoryId
+    photo: req.body.photo
   };
   try {
     const updateCategory = await Category.findByIdAndUpdate({ _id: CategoryId }, newCategory);

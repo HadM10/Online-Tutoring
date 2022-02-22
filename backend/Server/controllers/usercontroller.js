@@ -1,7 +1,6 @@
 
 const User = require("../models/Users");
 
-
 module.exports = {
 
   createUser: async (req, res) => {       // POST
@@ -30,6 +29,7 @@ module.exports = {
     }
   },
 
+  //NOT REQUIRED
   deleteUser: async (req, res) => {     // Delete
     try {
       const user = await User.findById(req.params.id);
