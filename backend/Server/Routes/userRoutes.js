@@ -3,7 +3,7 @@ const User = require("../models/user.js");
 const useUpload = require('../upload/uploadPhoto')
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const { registerValidation, loginValidation } = require("../validation"); // to validate information
+const { registerValidation, loginValidation } = require("../../validation"); // to validate information
 
 router.post("/register", async (req, res) => {
   //Lets validate the data before we input user

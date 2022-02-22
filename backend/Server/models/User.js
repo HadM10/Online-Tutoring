@@ -42,13 +42,13 @@ const UsersSchema = new Schema({
     },
     phone: {
         type: String,
-        required: True,
+        required: true,
         minimum: 8,
         max: 45
     },
     country: {
         type: String,
-        required: True,
+        required: true,
         minimum: 3,
         max: 45
     },
