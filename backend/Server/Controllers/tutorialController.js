@@ -24,7 +24,8 @@ exports.addTutorial = async (req, res) => {
     title: req.body.title,
     price: req.body.price,
     pricePerLesson: req.body.pricePerLesson,
-    photo: url + '/public/' + req.file.filename,
+    // photo: url + '/public/' + req.file.filename,
+    photo: req.body.photo,
     trainerId: req.body.trainerId,
     subCategories: req.body.subCategories,
     dateTime: req.body.dateTime

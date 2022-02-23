@@ -13,7 +13,8 @@ module.exports = {
 
   findUser: async (req, res) => {        // GET 
     try {
-      const user = await User.findById(req.params.id);
+      const user = await User.findById(req.params.id)
+      .populate({ path: 'userType', model: 'UserType' });
       res.send(user);
     } catch {
       res.status(404).send({ error: "user is not found!" });

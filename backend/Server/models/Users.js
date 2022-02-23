@@ -32,7 +32,6 @@ const UsersSchema = new Schema({
     age: {
         type: Number,
         required: true,
-        max: 2
     },
     password: {
         type: String,

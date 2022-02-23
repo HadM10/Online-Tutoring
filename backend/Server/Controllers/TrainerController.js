@@ -5,7 +5,9 @@ const Trainer = require('../models/Trainer')
 //GET TRAINERS  //NOT REUQUIRED
 exports.Trainer = async (req, res) => {
   try {
-    const Trainers = await Trainer.find()
+    const userId = req.body.userId
+    const Trainers = await Trainer.find({userId: userId})
+    .populate({ path: 'userId', model: 'Users' })
     res.json(Trainers);
   } catch (error) {
     res.status(404).json({ message: error })
