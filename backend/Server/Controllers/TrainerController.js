@@ -15,6 +15,7 @@ exports.Trainer = async (req, res) => {
 // ADD OR POST TRAINER
 exports.addTrainer = async (req, res) => {
   const newTrainer = new Trainer({
+    userId: req.body.userId,
     certificate: req.body.certificate,
     speciality: req.body.speciality,
     meetingUrl: req.body.meetingUrl
@@ -43,6 +44,7 @@ exports.deleteTrainer = async (req, res) => {
 exports.editTrainer = async (req, res) => {
   const TrainerId = req.params.id;
   const newTrainer = {
+    userId: req.body.userId,
     certificate: req.body.certificate,
     speciality: req.body.speciality,
     meetingUrl: req.body.meetingUrl

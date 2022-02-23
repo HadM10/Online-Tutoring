@@ -1,6 +1,11 @@
 const mongoose = require('mongoose');
 
 const trainerSchema = new mongoose.Schema({
+    userId: {
+        type: mongoose.Schema.ObjectId,
+        ref: "Users"
+    },
+    
     certificate: {
         type: String,
         required: true,
