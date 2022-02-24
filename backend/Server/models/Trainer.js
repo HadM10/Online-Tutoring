@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const trainerSchema = new mongoose.Schema({
     userId: {
-        type: mongoose.Schema.ObjectId,
+        type: mongoose.SchemaTypes.ObjectId,
         ref: "Users"
     },
     

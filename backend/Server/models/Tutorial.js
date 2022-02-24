@@ -6,11 +6,11 @@ const tutorialSchema = new mongoose.Schema({
     pricePerLesson: Number,
     photo: String,
     trainerId: {
-        type: mongoose.Schema.ObjectId,
+        type: mongoose.SchemaTypes.ObjectId,
         ref: "Users"
     },
     subCategories: {
-        type: mongoose.Schema.ObjectId,
+        type: mongoose.SchemaTypes.ObjectId,
         ref: "SubCategories"
     },
     dateTime: [

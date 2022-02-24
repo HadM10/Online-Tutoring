@@ -25,11 +25,12 @@ router.post("/register", async (req, res) => {
     fname: req.body.fname,
     lname: req.body.lname,
     email: req.body.email,
-    photo: url + '/public/' + req.file.filename,
+    photo: url + '/public/avatar.png',
     age: req.body.age,
     password: hashedPassword,
     phone: req.body.phone,
     country: req.body.country,
+    userType: req.body.userType
   });
 
   try {
@@ -118,6 +119,7 @@ const userController = require("../controllers/usercontroller.js");
 
 // CRUD for users
 router.route("/").post(userController.createUser);
+router.route("/profilepic").patch(userController.uploadPhoto, userController.updateUser)
 router
   .route("/:id")
   .get(userController.findUser)

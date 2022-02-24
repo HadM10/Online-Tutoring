@@ -10,7 +10,8 @@ const registerValidation = (data) => {
         age: Joi.number().required(),
         password: Joi.string().min(6).max(255).required(),
         phone: Joi.string().min(8).max(45).required(),
-        country: Joi.string().min(3).max(45).required()
+        country: Joi.string().min(3).max(45).required(),
+        userType: Joi.string()
     });
     return schema.validate(data);
 };

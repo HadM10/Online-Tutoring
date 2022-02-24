@@ -1,3 +1,4 @@
+const { string } = require("@hapi/joi");
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
@@ -51,10 +52,7 @@ const UsersSchema = new Schema({
         minimum: 3,
         max: 45
     },
-    userType: {
-        type: mongoose.Schema.ObjectId,
-        ref: "UserType"
-    },
+    userType: String,
 }, { timestamps: true });
 
 module.exports = mongoose.model("Users", UsersSchema);

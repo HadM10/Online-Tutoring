@@ -6,10 +6,9 @@ const Tutorial = require('../models/Tutorial')
 //GET TUTORIALS BY category
 exports.Tutorial = async (req, res) => {
   try {
-    const subCategory = req.body.subCategory
-    const tutorials = await Tutorial.find({ subCategories: subCategory })
+    const tutorials = await Tutorial.find()
       .populate({ path: 'trainerId', model: 'Users' })
-      .populate({ path: 'subCategories', model: 'SubCategories' })
+      .populate({ path: 'subCategories', model: 'SubCategory' })
     res.json(tutorials);
   } catch (error) {
     res.status(404).json({ message: error })
@@ -24,8 +23,7 @@ exports.addTutorial = async (req, res) => {
     title: req.body.title,
     price: req.body.price,
     pricePerLesson: req.body.pricePerLesson,
-    // photo: url + '/public/' + req.file.filename,
-    photo: req.body.photo,
+    photo: url + '/public/' + req.file.filename,
     trainerId: req.body.trainerId,
     subCategories: req.body.subCategories,
     dateTime: req.body.dateTime

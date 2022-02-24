@@ -14,7 +14,6 @@ module.exports = {
   findUser: async (req, res) => {        // GET 
     try {
       const user = await User.findById(req.params.id)
-      .populate({ path: 'userType', model: 'UserType' });
       res.send(user);
     } catch {
       res.status(404).send({ error: "user is not found!" });
@@ -26,6 +25,17 @@ module.exports = {
       const user = await User.findById(req.params.id);
       Object.assign(user, req.body);
       user.save();
+      res.send(user);
+    } catch {
+      res.status(404).send({ error: "user is not found!" });
+    }
+  },
+
+  profilePic: async (req, res) => {     // Patch 
+    try {
+      const url = req.protocol + '://' + req.get('host')
+      const newProfilePic = url + '/public/' + req.file.filename
+      const user = await User.findByIdAndUpdate({_id: req.params.id, photo: newProfilePic});
       res.send(user);
     } catch {
       res.status(404).send({ error: "user is not found!" });

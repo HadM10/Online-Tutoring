@@ -2,14 +2,14 @@ const mongoose = require('mongoose');
 
 const lessonSchema = new mongoose.Schema({
     tutorial: {
-        type: mongoose.Schema.ObjectId,
+        type: mongoose.SchemaTypes.ObjectId,
         ref: "Tutorial"
     },
     title: String,
     description: String,
     trainee: [{
         userId: {
-            type: mongoose.Schema.ObjectId,
+            type: mongoose.SchemaTypes.ObjectId,
             ref: "Users"
         },
         chosenDate: Date,
