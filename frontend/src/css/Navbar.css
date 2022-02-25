@@ -1,17 +1,45 @@
-.nav {
-    display: flex;
-    background-color: rgb(20, 13, 13);
+.nav{
+    display: flex; 
     width: 100%;
-    
+    position: fixed;
+    z-index: 1;
+
+}
+.nav_wood { 
+    background: linear-gradient(to top, rgb(10, 3, 3), rgb(8, 8, 8)) ;
+
 }
 
-.nav-link {
+.nav-components{
+    display: flex;
+    margin-top: 25px;
+}
+
+.nav-items {
     color: wheat;
     display: flex;
     align-items: center;
-    width: 100%;
-    height: 100px;
+    width: auto;
+    padding: 10px;
     text-decoration: none;
     margin-right: 50px;
     margin-left: 10px;
+}
+
+.nav-items:hover{
+    background-color: wheat;
+    color: black;
+    transform: scale(1.05);
+    transition: 0.5s;
+}
+
+.logo{
+    margin-right: 200px;
+    color: wheat;
+    display: flex;
+    text-decoration: none;
+    width: auto;
+    height: auto;
+    padding-left: 10px;
+    text-decoration: none;
 }

@@ -3,9 +3,11 @@ import '../css/Banner.css'
 
 function Banner() {
     return (
-        <div className='banner'>
-            {/* Banner */}
-        </div>
+        <header className='banner'>
+                  <video className="video" controls autoPlay muted loop>
+                <source src="sax.mp4" type="video/mp4" />
+            </video>
+        </header>
     )
 }
 
