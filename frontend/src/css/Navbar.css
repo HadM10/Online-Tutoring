@@ -13,6 +13,8 @@
 .nav-components{
     display: flex;
     margin-top: 25px;
+    justify-content: center;
+    width: 80%;
 }
 
 .nav-items {
@@ -34,7 +36,6 @@
 }
 
 .logo{
-    margin-right: 200px;
     color: wheat;
     display: flex;
     text-decoration: none;
@@ -42,4 +43,5 @@
     height: auto;
     padding-left: 10px;
     text-decoration: none;
+    width: 20%;
 }
