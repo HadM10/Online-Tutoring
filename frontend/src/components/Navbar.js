@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import '../css/Navbar.css'
 import { Link } from 'react-router-dom'
 import { Nav, NavItem, NavLink } from "react-bootstrap"
+import '../css/Navbar.css'
 
 function Navbar() {
     const [show, handleShow] = useState(false);
@@ -31,22 +31,30 @@ function Navbar() {
                             <span>Home</span>
                         </NavLink>
                     </NavItem>
-                    <NavItem eventKey="Subjects">
-                        <NavLink to={"/Subjects"} className="nav-items">
-                            <span>Subjects</span>
+                    <NavItem eventKey="Skills">
+                        <NavLink to={"/skills"} className="nav-items">
+                            <span>Skills</span>
                         </NavLink>
                     </NavItem>
                     <NavItem eventKey="Aboutus">
-                        <NavLink to={"/Aboutus"} className="nav-items">
+                        <NavLink to={"/aboutus"} className="nav-items">
                             <span>About Us</span>
                         </NavLink>
                     </NavItem>
                     <NavItem eventKey="Login">
-                        <NavLink to={"/Login"} className="nav-items">
+                        <NavLink to={"/login"} className="nav-items">
                             <span>Login</span>
                         </NavLink>
                     </NavItem>
                 </div>
+                <NavItem eventKey="register">
+                    <NavLink to={"/register"} style={{textDecoration: "none"}}>
+                        <div className='register'>
+                            <span style={{marginRight: "50px"}}>Register</span>
+                            <img width='24px' height='24px' src='./avatar.png'></img>
+                        </div>
+                    </NavLink>
+                </NavItem>
             </Nav>
         </div>
     )
