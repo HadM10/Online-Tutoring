@@ -21,39 +21,39 @@ function Navbar() {
         <div>
             <Nav className={`nav ${show && 'nav_wood'}`} defaultSelected="Home">
                 <NavItem eventKey="Logo">
-                    <NavLink to={"/"} className='logo'>
+                    <Link to={"/"} className='logo'>
                         <h1>TutoMania</h1>
-                    </NavLink>
+                    </Link>
                 </NavItem>
                 <div className='nav-components'>
                     <NavItem eventKey="Home">
-                        <NavLink to={"/"} className="nav-items">
+                        <Link to={"/"} className="nav-items">
                             <span>Home</span>
-                        </NavLink>
+                        </Link>
                     </NavItem>
                     <NavItem eventKey="Skills">
-                        <NavLink to={"/skills"} className="nav-items">
+                        <Link to={"/skills"} className="nav-items">
                             <span>Skills</span>
-                        </NavLink>
+                        </Link>
                     </NavItem>
                     <NavItem eventKey="Aboutus">
-                        <NavLink to={"/aboutus"} className="nav-items">
+                        <Link to={"/aboutus"} className="nav-items">
                             <span>About Us</span>
-                        </NavLink>
+                        </Link>
                     </NavItem>
                     <NavItem eventKey="Login">
-                        <NavLink to={"/login"} className="nav-items">
+                        <Link to={"/login"} className="nav-items">
                             <span>Login</span>
-                        </NavLink>
+                        </Link>
                     </NavItem>
                 </div>
                 <NavItem eventKey="register">
-                    <NavLink to={"/register"} style={{textDecoration: "none"}}>
+                    <Link to={"/register"} style={{textDecoration: "none"}}>
                         <div className='register'>
                             <span style={{marginRight: "50px"}}>Register</span>
                             <img width='24px' height='24px' src='./avatar.png'></img>
                         </div>
-                    </NavLink>
+                    </Link>
                 </NavItem>
             </Nav>
         </div>
