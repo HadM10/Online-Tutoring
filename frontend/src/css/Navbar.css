@@ -15,6 +15,8 @@
 .nav-components{
     display: flex;
     margin-top: 25px;
+    width: 50%;
+    
 }
 
 .nav-items {
@@ -36,6 +38,7 @@
 }
 
 .logo{
+    margin-right: 200px;
     color: wheat;
     display: flex;
     text-decoration: none;
@@ -50,7 +53,11 @@
     background-color: rgba(51, 51, 51, 0.5);
     border-radius: 0.2vw;
     text-decoration: none;
-
+    width: auto;
+    height: 20px;
+    margin: 25px;
+    padding: 10px;
+}
 
 .register:hover{
     color: #111;
