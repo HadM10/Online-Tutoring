@@ -1,4 +1,3 @@
-const { string } = require("@hapi/joi");
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
@@ -52,7 +51,10 @@ const UsersSchema = new Schema({
         minimum: 3,
         max: 45
     },
-    userType: String,
+    userType: {
+        type: String,
+        enum:["Trainer", "Trainee"]
+    } ,
 }, { timestamps: true });
 
 module.exports = mongoose.model("Users", UsersSchema);
