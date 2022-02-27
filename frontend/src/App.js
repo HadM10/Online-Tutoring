@@ -13,8 +13,6 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <Banner />
-      <Ourtrainers />
       <Routes>
         <Route path={"/"} element={<Home />} />
         <Route path={"/skills"} element={<Skills />} />

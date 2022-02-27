@@ -8,8 +8,8 @@
 
 }
 .nav_wood { 
-    background: linear-gradient(to top, rgb(10, 3, 3), rgb(8, 8, 8)) ;
-
+    background-color: #171009;
+    z-index: 3;
 }
 
 .nav-components{
