@@ -1,15 +1,13 @@
 import React, { useEffect, useState } from "react";
-import axios from 'axios';
 import '../css/ourtrainers.css';
+import Backend from "../services/Backend";
 
 
 function Ourtrainers() {
     const [trainers, setTrainers] = useState([]);
-    
 
-    useEffect(() => {
-        axios.get(`http://localhost:5000/trainers`)
-
+    const retrieveTrainers = () => {
+        Backend.getTrainers()
             .then((response) => {
                 setTrainers(response.data)
                 console.log(response.data)
@@ -17,6 +15,11 @@ function Ourtrainers() {
                 console.log(error);
 
             });
+    }
+
+
+    useEffect(() => {
+        retrieveTrainers()
     }, []);
 
 

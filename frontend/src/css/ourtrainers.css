@@ -13,8 +13,7 @@
     margin-bottom:40px !important;
     margin-top: 40px !important; 
     justify-content: space-around;
-
-} 
+}
 
 .ourtrainer-title{
     font-family: Segoe 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -30,13 +29,20 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-   
+    cursor: pointer;
+    transition-timing-function: ease-in;
+    transition: all 0.5s;
+}
+
+.ourtrainer-eachtrainer:hover{
+    transform: scale(1.08);
 }
 
 .ourtrainer--picture{
     border-radius: 50%;
     width: 300px;
     height: 300px;
+    box-shadow: 1px 2px 6px rgba(0, 0, 0), 1px 2px 4px rgba(0, 0, 0);
 }
 
 .ourtrainer--trainername{

@@ -65,7 +65,7 @@
 }
 
 .banner--fadeBottom {
-    height: 760px;
+    height: 759px;
     opacity: 0.7;
     background: linear-gradient(#171009, #654321);
     mix-blend-mode: multiply;

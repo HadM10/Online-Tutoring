@@ -6,12 +6,12 @@ class Backend {
         return axios.get(`skills/categories`);
     }
 
-    getSubCategories(id) {
-        return axios.get(`skills/subCategories/${id}`)
+    getSubCategories(id){
+        return axios.get('skills/subCategories/', id)
     }
 
-    getTrainers(id) {
-        return axios.get(`skills/tutorials/${id}`)
+    getTrainers() {
+        return axios.get('trainers/')
     }
 
     getTutorials(id) {
@@ -30,9 +30,13 @@ class Backend {
         return axios.post('users/login/', data)
     }
 
-    uploadPofilePic(formData) {
+    getTrainers(data){
+        return axios.get('/trainers', data)
+    }
+
+    uploadProfilePic(formData) {
         return axios.post(`users/uploadProfilePic`, formData)
     }
   }
 
-export default Backend
+export default new Backend()

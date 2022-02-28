@@ -1,8 +1,6 @@
 import React from "react";
 import { Routes, Route } from 'react-router-dom'
 import Navbar from "./components/Navbar";
-import Banner from "./components/Banner";
-import Ourtrainers from "./components/Ourtrainers";
 import Home from "./components/Home"
 import Skills from "./components/Skills";
 import AboutUs from "./components/AboutUs";

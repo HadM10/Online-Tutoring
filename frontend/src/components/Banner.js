@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import '../css/Banner.css'
 
 function Banner() {
-
+   
     const banners = [
         {
             video: "Piano.mp4",
@@ -15,16 +15,27 @@ function Banner() {
             description: "Music is the moonlight in the gloomy night of life"
         }
     ]
-    let newBanner = banners[0]
+    const [newBanner, setNewBanner] = useState(banners[0])
+    const [count, setCount] = useState(0)
+
     useEffect(() => {
         bannerInterval()
     }, [])
 
     const bannerInterval = () => {
         setInterval(() => {
-            let randomBanner = Math.random() * (banners.length - 1) + 1;
-            newBanner = banners[randomBanner]
-            console.log(newBanner)
+            // let banner = banners[Math.floor(Math.random()*banners.length)];
+            if(count < banners.length) {
+                setCount(count+1);
+                setNewBanner(banners[count])
+                console.log(count)
+            }
+            else{
+                setCount(0)
+                setNewBanner(banners[0])
+                console.log("else")
+            }
+           
         }, 5000)   
     return newBanner
     }
