@@ -6,6 +6,10 @@ import Backend from "../services/Backend";
 function Ourtrainers() {
     const [trainers, setTrainers] = useState([]);
 
+    useEffect(() => {
+        retrieveTrainers()
+    }, []);
+
     const retrieveTrainers = () => {
         Backend.getTrainers()
             .then((response) => {
@@ -16,12 +20,6 @@ function Ourtrainers() {
 
             });
     }
-
-
-    useEffect(() => {
-        retrieveTrainers()
-    }, []);
-
 
     const displayData = () => {
         return (

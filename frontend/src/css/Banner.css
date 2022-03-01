@@ -52,6 +52,8 @@
     padding-bottom: 0.5rem;
     height: 40px;
     text-shadow: 1px 2px 6px rgba(0, 0, 0), 1px 2px 4px rgba(0, 0, 0);
+    transition-timing-function: ease-in;
+    transition: all 1s;
 
 }
 
@@ -60,13 +62,12 @@
     background-color: wheat;
     box-shadow: 1px 2px 6px rgba(0, 0, 0), 1px 2px 4px rgba(0, 0, 0);
     transform: scale(1.08);
-    transition: all 1s;
     text-shadow: none;
 }
 
 .banner--fadeBottom {
     height: 759px;
-    opacity: 0.7;
+    opacity: 0.65;
     background: linear-gradient(#171009, #654321);
     mix-blend-mode: multiply;
 }

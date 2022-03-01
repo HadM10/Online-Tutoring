@@ -3,7 +3,7 @@ import axios from '../axios'
 class Backend {
 
     getCategories() {
-        return axios.get(`skills/categories`);
+        return axios.get('categories');
     }
 
     getSubCategories(id){
