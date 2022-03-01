@@ -1,0 +1,162 @@
+.flex-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    margin: 50px;
+}
+
+.flex-container>div {
+    display: flex;
+    flex-flow: column;
+    background-color: wheat;
+    align-items: center;
+}
+
+.card {
+    box-shadow: 1px 2px 6px rgba(0, 0, 0), 1px 2px 4px rgba(0, 0, 0);
+    width: 369px;
+    height: 536px;
+    text-align: center;
+    object-fit: contain;
+    transition-timing-function: ease-in;
+    transition: all 1s;
+    cursor: pointer;
+    margin-bottom: 50px;
+    overflow: hidden;
+    
+}
+
+.card:hover {
+    transform: scale(1.08);
+}
+
+.tutorial-image {
+    align-self: center;
+    width: 368px;
+    height: 250px;
+    margin-bottom: 10px;
+}
+
+.tutorial-imagesmall{
+    border-radius: 50%;
+    width: 81px;
+    height: 81px;
+    position: absolute;
+    align-self: end;
+    margin-top: 155px;
+    margin-right: 10px;
+   
+    
+}
+
+.tutorial-button {
+    cursor: pointer;
+    color: wheat;
+    outline: none;
+    border-radius: 15px;
+    font-weight: 700;
+    height: 40px;
+    text-shadow: 1px 2px 6px rgba(0, 0, 0), 1px 2px 4px rgba(0, 0, 0);
+    background: linear-gradient(#171009c0, #654321);
+    width: 60px;
+    height: 36px;
+    transition-timing-function: ease-in;
+    transition: all 1s;
+    align-self: flex-start;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+.tutorial-button:hover {
+    background: linear-gradient(#171009, #3b2814);
+    box-shadow: 1px 2px 6px rgba(0, 0, 0), 1px 2px 4px rgba(0, 0, 0);
+    text-shadow: none;
+}
+
+.tutorial-title {
+    font-size: 20px;
+    color: wheat;
+    margin: 5px;
+    text-shadow: 1px 2px 6px rgba(0, 0, 0), 1px 2px 4px rgba(0, 0, 0);
+    text-align: center;
+}
+
+.tutorial-titles{
+    display: flex;
+    flex-direction:row;
+    align-self: flex-start;
+    margin-left: 10px;
+}
+
+.tutorial-maintitle{
+    align-self: flex-start;
+    margin-left: 20px;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-family: Avenir;
+    font-style: 500;
+    margin-bottom: 0px;
+}
+
+.tutorial-name {
+    cursor: pointer;
+    color: wheat;
+    outline: none;
+    border-radius: 40px;
+    height: 37px;
+    text-shadow: 1px 2px 6px rgba(0, 0, 0), 1px 2px 4px rgba(0, 0, 0);
+    background: linear-gradient(#171009, #3b2814);
+    text-align: center;
+    width: 128px;
+    text-shadow: 1px 2px 6px rgba(0, 0, 0), 1px 2px 4px rgba(0, 0, 0);
+    margin-left: 10px;
+    margin-top: 15px;
+}
+
+.tutorial-price {
+    cursor: pointer;
+    color: wheat;
+    outline: none;
+    border-radius: 40px;
+    height: 37px;
+    text-shadow: 1px 2px 6px rgba(0, 0, 0), 1px 2px 4px rgba(0, 0, 0);
+    background: linear-gradient(#171009, #3b2814);
+    text-align: center;
+    width: 80px;
+    text-shadow: 1px 2px 6px rgba(0, 0, 0), 1px 2px 4px rgba(0, 0, 0);
+    margin-left: 15px;
+    margin-top: 15px;
+   
+}
+
+.tutorial-description {
+    padding: 20px;
+    padding-bottom: auto;
+    text-align: justify;
+    margin-top: 0px;
+}
+
+.get-started{
+    text-align: center;
+    width: 100%;
+    font-size: 50px;
+    color: #171009
+}
+
+.new-skill{
+    text-align: center;
+    width: 100%;
+    font-size: 20px;
+    font-weight:lighter;
+    color: whitesmoke;
+    text-shadow: 1px 2px 6px rgba(0, 0, 0), 1px 2px 4px rgba(0, 0, 0);
+}
+
+.levels{
+    text-align: center;
+    width: 100%;
+    font-size: 15px;
+    font-weight: lighter;
+    color: whitesmoke;
+    text-shadow: 1px 2px 6px rgba(0, 0, 0), 1px 2px 4px rgba(0, 0, 0);
+}

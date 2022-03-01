@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const tutorialSchema = new mongoose.Schema({
     title: String,
     price: Number,
+    description: String,
     pricePerLesson: Number,
     photo: String,
     trainerId: {

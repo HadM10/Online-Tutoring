@@ -7,7 +7,7 @@ const Tutorial = require('../models/Tutorial')
 exports.Tutorial = async (req, res) => {
   try {
     const tutorials = await Tutorial.find()
-      .populate({ path: 'trainerId', model: 'Users' })
+      .populate({ path: 'trainerId', model: 'Trainer' })
       .populate({ path: 'subCategories', model: 'SubCategory' })
     res.json(tutorials);
   } catch (error) {
@@ -21,6 +21,7 @@ exports.addTutorial = async (req, res) => {
   const url = req.protocol + '://' + req.get('host')
   const newTutorial = new Tutorial({
     title: req.body.title,
+    description: req.body.description,
     price: req.body.price,
     pricePerLesson: req.body.pricePerLesson,
     photo: url + '/public/' + req.file.filename,
@@ -54,6 +55,7 @@ exports.editTutorial = async (req, res) => {
   const tutorialId = req.params.id;
   const newTutorial = {
     title: req.body.title,
+    description: req.body.description,
     price: req.body.price,
     pricePerLesson: req.body.pricePerLesson,
     photo: req.body.photo,
