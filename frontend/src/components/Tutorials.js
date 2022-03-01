@@ -23,18 +23,18 @@ function Tutorials() {
 
     const displayTutorials = () => {
         return (
-            tutorials.map((tutorial) => {
+            tutorials.map((Tutorial) => {
                 return (
                     <div class="card">
-                        <img src={tutorial.photo} alt="category" className="tutorial-image"></img>
-                        <img src={tutorial.trainerId.photo} alt="category" className="tutorial-imagesmall"></img>
-                        
+                        <img src={Tutorial.photo} alt="category" className="tutorial-image"></img>
+                        {/* <img src={Tutorial.trainerId.photo} alt="category" className="tutorial-imagesmall"></img> */}
+
                         <div className="tutorial-titles">
-                        <div className="tutorial-name"><h3 className="tutorial-title">{tutorial.subCategories.name}</h3></div>
-                        <div className="tutorial-price"><h3 className="tutorial-title">{tutorial.pricePerLesson}/hr</h3></div>
+                            <div className="tutorial-name"><h3 className="tutorial-title">{Tutorial.subCategories.name}</h3></div>
+                            <div className="tutorial-price"><h3 className="tutorial-title">{Tutorial.pricePerLesson}/hr</h3></div>
                         </div>
-                        <p className='tutorial-maintitle'>{tutorial.title}</p>
-                        <p className='tutorial-description'>{tutorial.description}</p>
+                        <p className='tutorial-maintitle'>{Tutorial.title}</p>
+                        <p className='tutorial-description'>{Tutorial.description}</p>
                         <button className='tutorial-button'>More</button>
                     </div>
                 )
@@ -48,6 +48,7 @@ function Tutorials() {
             <div class="flex-container wrap">
                 {displayTutorials()}
             </div>
-        </div>);
+        </div>
+    )
 }
 export default Tutorials
