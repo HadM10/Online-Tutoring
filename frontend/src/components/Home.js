@@ -9,8 +9,8 @@ function Home() {
     <div>
         <Banner />
         <Categories />
-        <Ourtrainers />
         <Tutorials />
+        <Ourtrainers />
     </div>
   )
 }

@@ -43,8 +43,8 @@ function Tutorials() {
     }
     return (
         <div>
-            <h1 className='get-started'>Check all tutorial and enroll</h1>
-            <h2 className='new-skill'>__________Latest Tutorial__________</h2>
+            <h1 className='get-started'>Check All Tutorials And Enroll</h1>
+            <h2 className='new-skill'>__________Latest Tutorials__________</h2>
             <div class="flex-container wrap">
                 {displayTutorials()}
             </div>
