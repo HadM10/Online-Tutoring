@@ -5,7 +5,8 @@ const subCategory = require('../models/SubCategory')
 //GET SUBCATEGORIES
 exports.subCategory = async (req, res) => {
   try {
-    const subCategories = await subCategory.find()
+    const id = req.params.id
+    const subCategories = await subCategory.find({categoryId: id})
       .populate({ path: 'categoryId', model: 'Category' })
     res.json(subCategories);
   } catch (error) {

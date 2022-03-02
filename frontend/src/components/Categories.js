@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import Backend from '../services/Backend'
+import { Link } from 'react-router-dom'
 import "../css/Categories.css"
+
 
 function Categories() {
     const [categories, setCategories] = useState([])
@@ -27,8 +29,11 @@ function Categories() {
                         <img src={Category.photo} alt="category" className="category-image"></img>
                         <div className="category-name"><h3 className="category-title">{Category.name}</h3></div>
                         <p className='category-description'>{Category.description}</p>
-                        <button className='card-button'>See More</button>
-                    </div>
+                        <Link className='link-categories' to={`SubCategories/${Category._id}`}>
+                            <button className='card-button'>See More</button>
+                        </Link>
+
+                    </div >
                 )
             })
         )

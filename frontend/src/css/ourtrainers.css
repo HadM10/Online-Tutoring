@@ -30,7 +30,7 @@
     align-items: center;
     cursor: pointer;
     transition-timing-function: ease-in;
-    transition: all 0.5s;
+    transition: all 1s;
 }
 
 .ourtrainer-eachtrainer:hover{

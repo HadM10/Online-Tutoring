@@ -9,5 +9,6 @@ router.route('/')
 router.route('/:id')
     .delete(subCategoryController.deletesubCategory)
     .put(subCategoryController.editsubCategory)
+    .get(subCategoryController.subCategory)
 
 module.exports = router

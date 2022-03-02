@@ -7,7 +7,7 @@ class Backend {
     }
 
     getSubCategories(id){
-        return axios.get('skills/subCategories/', id)
+        return axios.get(`subCategories/${id}`)
     }
 
     getTrainers() {

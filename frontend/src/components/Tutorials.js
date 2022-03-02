@@ -26,6 +26,7 @@ function Tutorials() {
             tutorials.map((Tutorial) => {
                 return (
                     <div class="card">
+                        {console.log(Tutorial)}
                         <img src={Tutorial.photo} alt="category" className="tutorial-image"></img>
                         {/* <img src={Tutorial.trainerId.photo} alt="category" className="tutorial-imagesmall"></img> */}
 

@@ -7,7 +7,7 @@ const Tutorial = require('../models/Tutorial')
 exports.Tutorial = async (req, res) => {
   try {
     const tutorials = await Tutorial.find()
-      .populate({ path: 'trainerId', model: 'Trainer' })
+      .populate({ path: 'trainerId', model: 'Users' })
       .populate({ path: 'subCategories', model: 'SubCategory' })
     res.json(tutorials);
   } catch (error) {

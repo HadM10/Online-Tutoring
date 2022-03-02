@@ -7,7 +7,7 @@ import Tutorials from './Tutorials'
 function Home() {
   return (
     <div>
-        <Banner />
+        {/* <Banner /> */}
         <Categories />
         <Tutorials />
         <Ourtrainers />
