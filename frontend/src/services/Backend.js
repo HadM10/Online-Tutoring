@@ -15,7 +15,7 @@ class Backend {
     }
 
     getTutorial(id) {
-        return axios.get(`skills/tutorials/${id}`)
+        return axios.get(`tutorials/${id}`)
     }
 
     getTutorials() {

@@ -1,19 +1,17 @@
 import React, { useEffect, useState } from "react";
 import '../css/Tutorials.css';
 import Backend from "../services/Backend";
-import { Link } from 'react-router-dom'
 
 
-function Tutorials() {
+function AllTutorials() {
     const [tutorials, setTutorials] = useState([]);
-    const tutorialId = useParams().id
 
     useEffect(() => {
         retrieveTutorials()
     }, []);
 
     const retrieveTutorials = () => {
-        Backend.getTutorial(tutorialId)
+        Backend.getTutorials()
             .then((response) => {
                 setTutorials(response.data)
                 console.log(response.data)
@@ -54,4 +52,4 @@ function Tutorials() {
         </div>
     )
 }
-export default Tutorials
+export default AllTutorials

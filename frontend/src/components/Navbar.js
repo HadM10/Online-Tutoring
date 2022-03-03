@@ -51,7 +51,7 @@ function Navbar() {
                     <Link to={"/register"} style={{textDecoration: "none"}}>
                         <div className='register'>
                             <span style={{marginRight: "50px"}}>Register</span>
-                            <img width='24px' height='24px' src='./avatar.png'></img>
+                            <img width='24px' height='24px' src={window.location.origin + '/avatar.png'}></img>
                         </div>
                     </Link>
                 </NavItem>

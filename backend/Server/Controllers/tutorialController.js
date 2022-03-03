@@ -3,7 +3,7 @@ require('../models/connectDB')
 const useUpload = require('../upload/uploadPhoto')
 const Tutorial = require('../models/Tutorial')
 
-//GET TUTORIALS BY category
+//GET TUTORIALS
 exports.Tutorial = async (req, res) => {
   try {
     const tutorials = await Tutorial.find()
@@ -14,6 +14,20 @@ exports.Tutorial = async (req, res) => {
     res.status(404).json({ message: error })
   }
 }
+
+//GET TUTORIALS BY SUBCATEGORY
+exports.Tutorial = async (req, res) => {
+  try {
+    const id = req.params.id
+    const tutorials = await Tutorial.find({subCategories: id})
+      .populate({ path: 'trainerId', model: 'Users' })
+      .populate({ path: 'subCategories', model: 'SubCategory' })
+    res.json(tutorials);
+  } catch (error) {
+    res.status(404).json({ message: error })
+  }
+}
+
 
 //ADD OR POST TUTORIAL
 exports.uploadPhoto = useUpload.upload.single('photo')

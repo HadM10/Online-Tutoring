@@ -7,6 +7,7 @@ import Skills from "./components/Skills";
 import AboutUs from "./components/AboutUs";
 import Login from "./components/Login";
 import SubCategories from "./components/SubCategories";
+import Tutorials from "./components/Tutorials";
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route path={"/aboutus"} element={<AboutUs />} />
         <Route path={"/login"} element={<Login />} />
         <Route path={"/subCategories/:id"} element={<SubCategories />} />
+        <Route path={"tutorials/:id"} element={<Tutorials />} />
       </Routes>
 
     </div>

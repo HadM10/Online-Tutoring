@@ -11,6 +11,7 @@ router.route('/')
 router.route('/:id')
     .delete(tutorialController.deleteTutorial)
     .put(tutorialController.editTutorial)
+    .get(tutorialController.Tutorial)
 
 
 module.exports = router

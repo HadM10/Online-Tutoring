@@ -5,12 +5,12 @@ function Banner() {
    
     const banners = [
         {
-            video: "Piano.mp4",
+            video: "/Piano.mp4",
             title: "Music",
             description: "Music is the moonlight in the gloomy night of life"
         },
         {
-            video: "sax.mp4",
+            video: "/sax.mp4",
             title: "Music",
             description: "Music is the moonlight in the gloomy night of life"
         }
@@ -44,7 +44,7 @@ function Banner() {
         <>
             <header className='banner'>
                 <video className="video" autoPlay muted loop>
-                    <source src={newBanner.video} type="video/mp4" />
+                    <source src={window.location.origin + newBanner.video} type="video/mp4" />
                 </video>
                 <div className='banner-content'>
                     <h1 className='banner-title'>{newBanner.title}</h1>

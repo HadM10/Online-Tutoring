@@ -2,14 +2,14 @@ import React from 'react'
 import Banner from './Banner'
 import Ourtrainers from './Ourtrainers'
 import Categories from './Categories'
-import Tutorials from './Tutorials'
+import AllTutorials from './AllTutorials'
 
 function Home() {
   return (
     <div>
         {/* <Banner /> */}
         <Categories />
-        <Tutorials />
+        <AllTutorials />
         <Ourtrainers />
     </div>
   )

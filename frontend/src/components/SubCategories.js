@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import Backend from '../services/Backend'
+import { Link } from 'react-router-dom'
 import "../css/SubCategories.css"
 
 function SubCategories() {
@@ -29,7 +30,9 @@ function SubCategories() {
                         <img src={SubCategory.photo} alt="category" className="category-image"></img>
                         <div className="category-name"><h3 className="category-title">{SubCategory.name}</h3></div>
                         <p className='category-description'>{SubCategory.description}</p>
+                        <Link className='link-categories' to={`tutorials/${SubCategory._id}`}>
                         <button className='card-button'>See More</button>
+                        </Link>
                     </div>
                 )
             })
