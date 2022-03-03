@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import '../css/Tutorials.css';
 import Backend from "../services/Backend";
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 
 
 function Tutorials() {

@@ -41,6 +41,9 @@ class Backend {
     uploadProfilePic(formData) {
         return axios.post(`users/uploadProfilePic`, formData)
     }
+    getComments() {
+        return axios.get('/chats')
+    }
   }
 
 export default new Backend()
