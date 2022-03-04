@@ -1,4 +1,4 @@
-import React from "react";
+import {React, useEffect} from "react";
 import { Routes, Route } from 'react-router-dom'
 import Navbar from "./components/Navbar";
 import Banner from "./components/Banner";
@@ -8,11 +8,29 @@ import AboutUs from "./components/AboutUs";
 import Login from "./components/Login";
 import SubCategories from "./components/SubCategories";
 import Tutorials from "./components/Tutorials";
+import Lessons from "./components/Lessons";
+import './css/Preloader.css'
 
 
 function App() {
+
+  useEffect(() => {
+    const preloader = () => {
+      let interval = setInterval(() => {
+        document.getElementById('preloader').style.display = 'none';
+        document.getElementById('allWebsite').style.display = 'block';
+        clearInterval(interval)
+      }, 3000)
+    }
+    preloader();
+  }, []);
+
   return (
     <div className="App">
+      <div id="preloader">
+      <div id="loader" class="nfLoader"></div>
+      </div>
+      <div id='allWebsite' style={{ display: "none" }}>
       <Navbar />
       <Banner />
       <Routes>
@@ -21,9 +39,11 @@ function App() {
         <Route path={"/aboutus"} element={<AboutUs />} />
         <Route path={"/login"} element={<Login />} />
         <Route path={"/subCategories/:id"} element={<SubCategories />} />
-        <Route path={"tutorials/:id"} element={<Tutorials />} />
+        <Route path={"/subCategories/:id/tutorials/:id"} element={<Tutorials />} />
+        <Route path={"/subCategories/:id/tutorials/:id/lessons/:id"} element={<Lessons />} />
       </Routes>
 
+    </div>
     </div>
   );
 }

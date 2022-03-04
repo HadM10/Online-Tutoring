@@ -6,8 +6,8 @@ const Lesson = require('../models/Lesson')
 //GET LESSONS FOR TUTORIAL
 exports.Lesson = async (req, res) => {
   try {
-    const tutorialId = req.body.tutorialId
-    const Lessons = await Lesson.find({ tutorial: tutorialId })
+    const id = req.params.id
+    const Lessons = await Lesson.find({ tutorial: id })
       .populate({ path: 'tutorial', model: 'Tutorial' })
       .populate({ path: 'trainee.userId', model: 'Users' })
     res.json(Lessons);

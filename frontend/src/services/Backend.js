@@ -23,7 +23,7 @@ class Backend {
     }
 
     getLessons(id) {
-        return axios.get(`skills/lessons/${id}`)
+        return axios.get(`lessons/${id}`)
     }
 
     registerUser(data) {

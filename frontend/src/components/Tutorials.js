@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from "react";
 import '../css/Tutorials.css';
 import Backend from "../services/Backend";
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 
 
 function Tutorials() {
     const [tutorials, setTutorials] = useState([]);
-    const tutorialId = useParams().id
+    const subCategories = useParams().id
 
     useEffect(() => {
         retrieveTutorials()
     }, []);
 
     const retrieveTutorials = () => {
-        Backend.getTutorial(tutorialId)
+        Backend.getTutorial(subCategories)
             .then((response) => {
                 setTutorials(response.data)
                 console.log(response.data)
@@ -38,7 +38,10 @@ function Tutorials() {
                         </div>
                         <p className='tutorial-maintitle'>{Tutorial.title}</p>
                         <p className='tutorial-description'>{Tutorial.description}</p>
+                        <Link className='link-categories' to={`lessons/${Tutorial._id}`}>
                         <button className='tutorial-button'>More</button>
+                        </Link>
+                        
                     </div>
                 )
             })

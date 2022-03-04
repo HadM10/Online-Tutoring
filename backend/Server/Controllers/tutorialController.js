@@ -4,7 +4,7 @@ const useUpload = require('../upload/uploadPhoto')
 const Tutorial = require('../models/Tutorial')
 
 //GET TUTORIALS
-exports.Tutorial = async (req, res) => {
+exports.Tutorials = async (req, res) => {
   try {
     const tutorials = await Tutorial.find()
       .populate({ path: 'trainerId', model: 'Users' })

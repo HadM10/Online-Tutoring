@@ -5,7 +5,7 @@ const router = express.Router()
 const tutorialController = require('../Controllers/tutorialController');
 
 router.route('/')
-    .get(tutorialController.Tutorial)
+    .get(tutorialController.Tutorials)
     .post(tutorialController.uploadPhoto, tutorialController.addTutorial)
 
 router.route('/:id')
