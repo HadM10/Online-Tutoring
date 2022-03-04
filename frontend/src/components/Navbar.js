@@ -49,7 +49,7 @@ function Navbar() {
                 </div>
                 <NavItem eventKey="register">
                     <Link to={"/register"} style={{textDecoration: "none"}}>
-                        <div className='register'>
+                        <div className={`register ${show && 'register_wood'}`}>
                             <span style={{marginRight: "50px"}}>Register</span>
                             <img width='24px' height='24px' src={window.location.origin + '/avatar.png'}></img>
                         </div>

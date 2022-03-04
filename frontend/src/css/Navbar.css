@@ -1,5 +1,5 @@
-.nav{
-    display: flex; 
+.nav {
+    display: flex;
     width: 100%;
     position: fixed;
     z-index: 1;
@@ -8,16 +8,17 @@
     text-shadow: 1px 2px 6px rgba(0, 0, 0), 1px 2px 4px rgba(0, 0, 0);
 
 }
-.nav_wood { 
+
+.nav_wood {
     background-color: #171009;
     z-index: 3;
 }
 
-.nav-components{
+.nav-components {
     display: flex;
     margin-top: 25px;
     width: 50%;
-    
+
 }
 
 .nav-items {
@@ -33,14 +34,14 @@
     transition: all 0.5s;
 }
 
-.nav-items:hover{
+.nav-items:hover {
     background-color: wheat;
     color: black;
     transform: scale(1.05);
     text-shadow: none;
 }
 
-.logo{
+.logo {
     margin-right: 200px;
     color: wheat;
     display: flex;
@@ -50,7 +51,8 @@
     padding-left: 10px;
 }
 
-.register{
+
+.register {
     display: flex;
     color: wheat;
     background-color: rgba(51, 51, 51, 0.5);
@@ -64,7 +66,13 @@
     transition: all 1s;
 }
 
-.register:hover{
+.register_wood {
+    background-color: wheat;
+    color: #111;
+    text-shadow: none;
+}
+
+.register:hover {
     color: #111;
     background-color: wheat;
     box-shadow: 1px 2px 6px rgba(0, 0, 0), 1px 2px 4px rgba(0, 0, 0);
