@@ -5,6 +5,10 @@
     margin: 50px;
 }
 
+.all-tutorials{
+    margin-top: 100px;
+}
+
 .flex-container>div {
     display: flex;
     flex-flow: column;
