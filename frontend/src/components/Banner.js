@@ -11,39 +11,24 @@ function Banner() {
         },
         {
             video: "/sax.mp4",
-            title: "Music",
+            title: "Sax",
             description: "Music is the moonlight in the gloomy night of life"
         }
     ]
-    const [newBanner, setNewBanner] = useState(banners[0])
-    const [count, setCount] = useState(0)
+    const [newBanner, setNewBanner] = useState([])
+    const videoRef = useRef();
 
     useEffect(() => {
-        bannerInterval()
-    }, [])
-
-    const bannerInterval = () => {
-        setInterval(() => {
-            // let banner = banners[Math.floor(Math.random()*banners.length)];
-            if(count < banners.length) {
-                setCount(count+1);
-                setNewBanner(banners[count])
-                console.log(count)
-            }
-            else{
-                setCount(0)
-                setNewBanner(banners[0])
-                console.log("else")
-            }
-           
-        }, 5000)   
-    return newBanner
-    }
+        setNewBanner(
+            banners[Math.floor(Math.random() * banners.length)]
+        )
+        videoRef.current?.load()
+    }, [newBanner.video])
 
     return (
         <>
             <header className='banner'>
-                <video className="video" autoPlay muted loop>
+                <video ref={videoRef} className="video" autoPlay muted loop>
                     <source src={window.location.origin + newBanner.video} type="video/mp4" />
                 </video>
                 <div className='banner-content'>

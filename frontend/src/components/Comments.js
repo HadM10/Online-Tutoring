@@ -38,7 +38,7 @@ function TraineeComments() {
         )
     }
     return (<div className="comment-container">
-        <h1 className="comment-title"> What they Say!</h1>
+        <h1 className="comment-title"> What our students from around the world say</h1>
         <div className="comment-main">{displayData()}</div>
     </div>);
 }

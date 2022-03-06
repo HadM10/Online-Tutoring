@@ -3,14 +3,15 @@ import Banner from './Banner'
 import Ourtrainers from './Ourtrainers'
 import Categories from './Categories'
 import AllTutorials from './AllTutorials'
-// import Tutorials from './Tutorials'
 import TraineeComments from './Comments'
+import Login from './Login'
 
 function Home() {
   return (
     <div>
         {/* <Banner /> */}
         <Categories />
+        <Login />
         <TraineeComments />
         <AllTutorials />
         <Ourtrainers />
