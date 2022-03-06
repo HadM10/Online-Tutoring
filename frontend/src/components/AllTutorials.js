@@ -28,7 +28,7 @@ function AllTutorials() {
                     <div class="card">
                         {console.log(Tutorial)}
                         <img src={Tutorial.photo} alt="category" className="tutorial-image"></img>
-                        {/* <img src={Tutorial.trainerId.photo} alt="category" className="tutorial-imagesmall"></img> */}
+                        <img src={Tutorial.trainerId.photo} alt="category" className="tutorial-imagesmall"></img>
 
                         <div className="tutorial-titles">
                             <div className="tutorial-name"><h3 className="tutorial-title">{Tutorial.subCategories.name}</h3></div>
