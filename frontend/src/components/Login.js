@@ -4,7 +4,7 @@ import "../css/Login.css";
 
 function Login() {
     return (
-        <section className="login-card">
+        <div className="login-card">
             <img className='login-img-home' src={window.location.origin + '/homeLoginImgpng.png'} alt='video call tutorial'></img>
             <div className="login-card2">
                 <div className='login-Title'>Join your live class with your instructor via video call</div>
@@ -18,7 +18,7 @@ function Login() {
                         <div className='register-block'>Don't have an account? <br></br><Link className='register-link' to={"/Register"}>Please Register </Link> </div>
                     </div>
             </div>
-        </section>
+        </div>
 
     )
 

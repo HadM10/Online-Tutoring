@@ -20,17 +20,18 @@
     position: relative;
     width: 400px;
     height: 600px;
-    background: transparent linear-gradient(155deg, #1A388F 0%, #4860A5 100%) 0% 0% no-repeat padding-box;
+    background: transparent linear-gradient(155deg, #1A388F 0%, #4860A5 100%);
     box-shadow: 0px 0px 8px #000000;
     border-radius: 2vw;
     opacity: 1;
     float: right;
     margin-right: 100px;
-    margin-top: -520px;
+    margin-top: -50px;
 }
 
 .login-img-home {
     z-index: 2;
+    position: absolute;
     width: 900px;
     height: auto;
     margin-top: 20px;
