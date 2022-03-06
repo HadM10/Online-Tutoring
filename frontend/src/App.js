@@ -20,7 +20,7 @@ function App() {
         document.getElementById('preloader').style.display = 'none';
         document.getElementById('allWebsite').style.display = 'block';
         clearInterval(interval)
-      }, 3000)
+      }, 2000)
     }
     preloader();
   }, []);

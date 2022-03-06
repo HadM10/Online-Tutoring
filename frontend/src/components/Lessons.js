@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import Backend from '../services/Backend'
 import { Link, useParams } from 'react-router-dom'
-import "../css/Categories.css"
+import "../css/Lessons.css"
 
 function Lessons() {
     const [Lessons, setLessons] = useState([])
     const lessonId = useParams().id
-    
+
 
     useEffect(() => {
         retrieveLessons()
@@ -27,11 +27,17 @@ function Lessons() {
             Lessons.map((Lesson) => {
 
                 return (
-                    <div class="card">
-                        <img src={Lesson.tutorial.photo} alt="category" className="category-image"></img>
-                        <div className="category-name"><h3 className="category-title">{Lesson.title}</h3></div>
-                        <p className='category-description'>{Lesson.description}</p>                       
-                        <button className='card-button'>See More</button>
+                    <div class="card-lessons">
+                        
+                            <img src={Lesson.tutorial.photo} alt="lesson" className="lesson-img"></img>
+                        
+                        <div className="lesson-info">
+                            <h3 className="lesson-title">{Lesson.title}</h3>
+                            <p className='lesson-description'>{Lesson.description}</p>
+                        </div>
+                        <div className='lesson-start'>
+                            <button className='card-button-lesson'>Start</button>
+                        </div>
                     </div>
                 )
             })
@@ -42,7 +48,7 @@ function Lessons() {
             <h1 className='get-started'>Let's Get Started!</h1>
             <h2 className='new-skill'>Learn a new skill online with a private tutor</h2>
             <h3 className='levels'>Beginner, Intermediate & Advanced</h3>
-            <div class="flex-container wrap">
+            <div class="">
                 {displayLessons()}
             </div>
         </div>
