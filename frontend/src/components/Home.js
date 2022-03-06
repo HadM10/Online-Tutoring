@@ -5,6 +5,7 @@ import Categories from './Categories'
 import AllTutorials from './AllTutorials'
 import TraineeComments from './Comments'
 import Login from './Login'
+import Footer from './Footer'
 
 function Home() {
   return (
@@ -12,9 +13,9 @@ function Home() {
         {/* <Banner /> */}
         <Categories />
         <Login />
-        <TraineeComments />
         <AllTutorials />
-        <Ourtrainers />
+        <Ourtrainers />     
+        <TraineeComments />   
         <Footer />
     </div>
   )

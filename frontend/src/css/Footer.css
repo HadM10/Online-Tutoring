@@ -7,8 +7,8 @@
     flex-direction: row;
     flex-wrap: wrap;
     height: 270px;
-    background: #0D1C48 0% 0% no-repeat padding-box;
-    color:white;
+    background: linear-gradient(#171009, #3b2814);
+    color:wheat;
     justify-content: space-evenly;
     padding-top: 100px;
 }
@@ -40,8 +40,8 @@
 }
 
 .CopyRight{
-    background-color: #070E24;
-    color: white;
+    background-color: #171009;
+    color: wheat;
     height: 80px;
     display:flex;
     align-items: center;
@@ -50,12 +50,12 @@
 }
 
 .Subscribe{
-    background: #0D1C48 0% 0% no-repeat padding-box;
-    color:white;
+    background: linear-gradient(#3b2814, #171009) 0% 0% no-repeat padding-box;
+    color:wheat;
     display:flex;
-    justify-content:center;
-    
+    justify-content:center;   
     padding-top: 50px;
+    padding: 20px;
 }
 
 .Subscribe--text{
@@ -67,21 +67,43 @@
     height: 53px;
     margin-right: 15px;
     padding-left: 20px;
+    transition-timing-function: ease-in;
+    transition: all 1s;
+}
+
+.Subscribe--textbox:hover{
+    transform: scale(1.02);
+}
+
+.Subscribe--textbox:focus{
+    border: none;
+    outline: none;
+    box-shadow: 1px 2px 6px rgba(0, 0, 0), 1px 2px 4px rgba(0, 0, 0);
 }
 
 .Subscribe--confirm{
     width: 185px;
+    font-size: 15px;
     height: 58px;
-    background: transparent linear-gradient(310deg, #F94D1D 0%, #FD8001 100%) 0% 0% no-repeat padding-box;
-    box-shadow: inset 8px 3px 8px #00000029, 0px 0px 12px #0000005C;
+    background-color: rgba(189, 149, 77, 0.95);
+    color:#171009;
+    outline: none;
     border: none;
-    border-radius: 5px;
-    color: white;
+    font-weight: 700;
+    border-radius: 0.2vw;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin-right: 1rem;
+    padding-top: 0.5rem;
+    cursor: pointer;
+    transition-timing-function: ease-in;
+    transition: all 1s;
 }
 
 .Subscribe--confirm:hover{
-    background: transparent linear-gradient(310deg, #F94D1D 0%, #FD8001 20%) 20% 20% no-repeat padding-box;
-  
+    transform: scale(1.05);
+    background-color: rgb(216, 193, 151);
+    box-shadow: 1px 2px 6px rgba(0, 0, 0), 1px 2px 4px rgba(0, 0, 0);
 }
 
 .Socialmedia{
@@ -100,8 +122,6 @@
     background-color: rgba(255, 255, 255, 0.459);
     border-radius: 50%;
 }
-
-
 
 .Footer{
     display:flex;
