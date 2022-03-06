@@ -15,6 +15,7 @@ function Home() {
         <TraineeComments />
         <AllTutorials />
         <Ourtrainers />
+        <Footer />
     </div>
   )
 }
