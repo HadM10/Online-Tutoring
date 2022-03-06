@@ -3,7 +3,7 @@ import Banner from './Banner'
 import Ourtrainers from './Ourtrainers'
 import Categories from './Categories'
 import AllTutorials from './AllTutorials'
-// import Tutorials from './Tutorials'
+import Footer from './Footer'
 import TraineeComments from './Comments'
 
 function Home() {
@@ -14,6 +14,7 @@ function Home() {
         <TraineeComments />
         <AllTutorials />
         <Ourtrainers />
+        <Footer />
     </div>
   )
 }
