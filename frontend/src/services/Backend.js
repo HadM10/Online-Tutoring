@@ -19,7 +19,7 @@ class Backend {
     }
 
     getTutorials() {
-        return axios.get('tutorials/')
+        return axios.get('/tutorials')
     }
 
     getLessons(id) {
@@ -40,6 +40,9 @@ class Backend {
 
     uploadProfilePic(formData) {
         return axios.post(`users/uploadProfilePic`, formData)
+    }
+    getComments() {
+        return axios.get('/chats')
     }
   }
 

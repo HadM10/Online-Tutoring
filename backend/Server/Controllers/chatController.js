@@ -7,7 +7,8 @@ const Chat = require('../models/Chat')
 exports.Chat = async (req, res) => {
   try {
     const userId = req.body.userId
-    const Chats = await Chat.find({ sender: userId })
+    // const Chats = await Chat.find({ sender: userId })
+    const Chats = await Chat.find()
       .populate({ path: 'sender', model: 'Users' })
       .populate({ path: 'receiver', model: 'Users' })
     res.json(Chats);
