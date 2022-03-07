@@ -10,10 +10,21 @@ function Banner() {
             description: "Music is the moonlight in the gloomy night of life"
         },
         {
-            video: "/sax.mp4",
-            title: "Sax",
-            description: "Music is the moonlight in the gloomy night of life"
+            video: "/cooking.mp4",
+            title: "Cooking",
+            description: "Real cooking is more about following your heart than following recipes"
+        },
+        {
+            video: "/martialarts.mp4",
+            title: "Martial Arts",
+            description: "Given enough time, any man may master the physical. With enough knowledge, any man may become wise. It is the true warrior who can master both… and surpass the result"
+        },
+        {
+            video: "/programming.mp4",
+            title: "Programming",
+            description: "The best error message is the one that never shows up"
         }
+        
     ]
     const [newBanner, setNewBanner] = useState([])
     const videoRef = useRef();

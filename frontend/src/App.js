@@ -9,6 +9,7 @@ import Login from "./components/Login";
 import SubCategories from "./components/SubCategories";
 import Tutorials from "./components/Tutorials";
 import Lessons from "./components/Lessons";
+import Footer from "./components/Footer"
 import './css/Preloader.css'
 
 
@@ -32,7 +33,6 @@ function App() {
       </div>
       <div id='allWebsite' style={{ display: "none" }}>
       <Navbar />
-      <Banner />
       <Routes>
         <Route path={"/"} element={<Home />} />
         <Route path={"/skills"} element={<Skills />} />
@@ -42,7 +42,7 @@ function App() {
         <Route path={"/subCategories/:id/tutorials/:id"} element={<Tutorials />} />
         <Route path={"/subCategories/:id/tutorials/:id/lessons/:id"} element={<Lessons />} />
       </Routes>
-
+      <Footer />
     </div>
     </div>
   );

@@ -13,6 +13,7 @@ const SubCategorySchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    banner: String
 
 }, { timestamps: true })
 

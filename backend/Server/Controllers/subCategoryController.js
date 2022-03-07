@@ -21,7 +21,8 @@ exports.addsubCategory = async (req, res) => {
   const newsubCategory = new subCategory({
     name: req.body.name,
     photo: req.body.photo,
-    categoryId: req.body.categoryId
+    categoryId: req.body.categoryId,
+    banner: req.body.banner
 
   });
 
@@ -50,7 +51,8 @@ exports.editsubCategory = async (req, res) => {
   const newsubCategory = {
     name: req.body.name,
     photo: req.body.photo,
-    categoryId: req.body.categoryId
+    categoryId: req.body.categoryId,
+    banner: req.body.banner
   };
   try {
     const updatesubCategory = await subCategory.findByIdAndUpdate({ _id: subCategoryId }, newsubCategory);

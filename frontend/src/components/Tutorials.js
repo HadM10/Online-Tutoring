@@ -22,11 +22,13 @@ function Tutorials() {
 
             });
     }
-
     const displayTutorials = () => {
         return (
             tutorials.map((Tutorial) => {
                 return (
+                    <>
+                    < div className = 'tutorial-banner' > <img className='tutorial-banner-image' src={Tutorial.subCategories.banner}></img></div >
+                    <div className="tutorial-banner--fadeBottom"></div>
                     <div class="card">
                         {console.log(Tutorial)}
                         <img src={Tutorial.photo} alt="category" className="tutorial-image"></img>
@@ -43,14 +45,15 @@ function Tutorials() {
                         </Link>
                         
                     </div>
+                    </>
                 )
             })
         )
     }
     return (
         <div>
-            <h1 className='get-started'>Check All Tutorials And Enroll</h1>
-            <h2 className='new-skill'>__________Latest Tutorials__________</h2>
+            {/* <h1 className='get-started'>Check All Tutorials And Enroll</h1>
+            <h2 className='new-skill'>__________Latest Tutorials__________</h2> */}
             <div class="flex-container wrap">
                 {displayTutorials()}
             </div>

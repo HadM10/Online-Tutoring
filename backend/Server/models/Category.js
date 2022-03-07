@@ -9,6 +9,8 @@ const CategorySchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    
+    banner: String,
 
     description: String
     

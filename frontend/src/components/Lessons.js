@@ -27,6 +27,7 @@ function Lessons() {
             Lessons.map((Lesson) => {
 
                 return (
+                    <>
                     <div class="card-lessons">
                         
                             <img src={Lesson.tutorial.photo} alt="lesson" className="lesson-img"></img>
@@ -39,6 +40,7 @@ function Lessons() {
                             <button className='card-button-lesson'>Start</button>
                         </div>
                     </div>
+                    </>
                 )
             })
         )
@@ -48,6 +50,7 @@ function Lessons() {
             <h1 className='get-started'>Let's Get Started!</h1>
             <h2 className='new-skill'>Learn a new skill online with a private tutor</h2>
             <h3 className='levels'>Beginner, Intermediate & Advanced</h3>
+            <div className='enroll-btn'><button className='card-button-lesson'>Enroll</button></div>
             <div class="">
                 {displayLessons()}
             </div>

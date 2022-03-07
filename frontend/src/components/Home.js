@@ -5,18 +5,17 @@ import Categories from './Categories'
 import AllTutorials from './AllTutorials'
 import TraineeComments from './Comments'
 import Login from './Login'
-import Footer from './Footer'
 
 function Home() {
   return (
     <div>
-        {/* <Banner /> */}
+        <Banner />
         <Categories />
         <Login />
         <AllTutorials />
         <Ourtrainers />     
         <TraineeComments />   
-        <Footer />
+        
     </div>
   )
 }
