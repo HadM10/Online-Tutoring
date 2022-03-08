@@ -5,6 +5,7 @@ import Categories from './Categories'
 import AllTutorials from './AllTutorials'
 import TraineeComments from './Comments'
 import Login from './Login'
+import Payment from "./Payment/index.js"
 
 function Home() {
   return (
@@ -14,7 +15,8 @@ function Home() {
         <Login />
         <AllTutorials />
         <Ourtrainers />     
-        <TraineeComments />   
+        <TraineeComments />  
+        <Payment />  
         
     </div>
   )
