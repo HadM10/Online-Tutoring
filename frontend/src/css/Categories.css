@@ -4,6 +4,7 @@
     justify-content: space-evenly;
     margin: 50px;
     margin-bottom: 100px !important;
+    margin-top: 100px !important;
 }
 
 .flex-container>div {
@@ -23,6 +24,7 @@
     cursor: pointer;
     margin-bottom: 50px;
     overflow: hidden;
+    margin-right: 50px;
     
 }
 

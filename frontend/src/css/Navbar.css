@@ -18,6 +18,7 @@
     display: flex;
     margin-top: 25px;
     width: 50%;
+    margin: auto;
 
 }
 
@@ -60,7 +61,8 @@
     text-decoration: none;
     width: auto;
     height: 20px;
-    margin: 25px;
+    margin-top: 25px;
+    margin-right: 50px;
     padding: 10px;
     transition-timing-function: ease-in;
     transition: all 1s;
