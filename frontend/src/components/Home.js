@@ -5,7 +5,7 @@ import Categories from './Categories'
 import AllTutorials from './AllTutorials'
 import TraineeComments from './Comments'
 import Login from './Login'
-import Payment from "./Payment/index.js"
+import Payment from "./PaymentForm.js"
 
 function Home() {
   return (
