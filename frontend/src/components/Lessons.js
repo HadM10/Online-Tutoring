@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Backend from '../services/Backend'
 import { Link, useParams } from 'react-router-dom'
 import "../css/Lessons.css"
-import Payment from "./Payment/index.js"
+import Payment from "./PaymentForm.js"
 
 function Lessons() {
     const [Lessons, setLessons] = useState([])
