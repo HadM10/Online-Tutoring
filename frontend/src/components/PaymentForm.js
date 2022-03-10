@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
 import Cards from "react-credit-cards";
 import "react-credit-cards/es/styles-compiled.css";
 import "../css/PaymentForm.css";
@@ -37,7 +36,7 @@ const Payment = () => {
       <form>
         <div className="row">
           <div className="col-sm-11">
-            <label for="name">Card Number</label>
+            <label for="name">Card Number
             <input
               type="tel"
               className="form-control"
@@ -50,6 +49,7 @@ const Payment = () => {
               }}
               onFocus={(e) => SetFocus(e.target.name)}
             ></input>
+            </label>
           </div>
         </div>
         <br />
@@ -81,12 +81,12 @@ const Payment = () => {
           </div>
         </div>
 
-        <div className="row">
+        <div className="row rowlast">
 
           {/* CARD MONTH */}
           <div className="col-sm-4">
             <select
-              className="form-control"
+              className="form-control1"
               name="expiry"
               onChange={handleDate}
             >
@@ -109,7 +109,7 @@ const Payment = () => {
           {/* CARD YEAR */}
           <div className="col-sm-4">
             <select
-              className="form-control"
+              className="form-control1"
               name="expiry"
               onChange={handleExpiry}
             >
@@ -133,7 +133,7 @@ const Payment = () => {
               type="tel"
               name="cvc"
               maxlength="3"
-              className=" form-control card"
+              className=" form-control2 card"
               value={cvc}
               pattern="\d*"
               onChange={(e) => {

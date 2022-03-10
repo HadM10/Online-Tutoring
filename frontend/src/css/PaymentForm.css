@@ -61,7 +61,8 @@
 
 .row1{
     display: flex;
-    justify-content:space-between;  
+    flex-direction: row;
+    justify-content:space-between; 
 }
  
 .Label2{
@@ -70,10 +71,6 @@
 
 form {
     margin-bottom: 20px;
-}
-
-.col-sm-4, .col-sm-3 {
- margin-bottom: -40px !important;
 }
 
 .credit-card{
@@ -86,5 +83,51 @@ form {
     margin-left: 600px;
     margin-bottom: 50px;
     box-shadow: 1px 2px 6px rgba(0, 0, 0), 1px 2px 4px rgba(0, 0, 0);
+}
+
+.form-control{
+  width:400px;
+  height:35px;
+  background-color: white !important;
+  border: 1px solid gray;
+
+}
+
+.form-control1, .form-control2{
+  width: 110px;
+  height:35px;
+  margin-top: 20px;
+  background-color: white;
+  -webkit-appearance: none;
+  border: 1px solid gray;
+  margin-top: 5px;
+  margin-right: 38px;
+  box-shadow: none !important;
+}
+
+.form-control2{
+  box-shadow: none;
+  height: 35px;
+}
+
+.row{
+  display: flex;
+}
+
+.btn-secondary{
+  background-color:grey !important;
+  color: white !important;
+  margin-top: -50px !important;
+}
+
+.btn-secondary:hover{
+  background-color:grey !important;
+  color: white !important;
+  margin-top: -50px !important;
+  cursor: pointer;
+}
+
+.rowlast{
+  margin-bottom: -30px;
 }
 
