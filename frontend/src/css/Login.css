@@ -147,3 +147,10 @@
 .register-link:hover{
     color: #171009;
 }
+
+.ligne{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    margin-left: 10px;
+}
