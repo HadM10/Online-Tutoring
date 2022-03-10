@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
 import Cards from "react-credit-cards";
 import "react-credit-cards/es/styles-compiled.css";
-import "../css/PaymentForm.css";
+import { useNavigate } from 'react-router-dom'
+import "../css/Payment.css";
 
 const Payment = () => {
   const [number, SetNumber] = useState("");
@@ -18,7 +19,25 @@ const Payment = () => {
   const handleExpiry = (e) => {
     SetExpiry(month.concat(e.target.value));
   };
+  const navigate = useNavigate()
 
+  const checkout = () => {
+
+    const pay = async (e) => {
+        e.preventDefault()
+        const url =localStorage.getItem("url")
+        let intervalNav = await setInterval(() => {
+            navigate(url)
+            clearInterval(intervalNav)
+        }, 1000)
+        const payed =localStorage.getItem("Payed")
+        console.log(payed)
+    }
+
+    return <div className='enroll-btn'><button className='card-button-lesson' onClick={pay}>Checkout</button></div>
+}
+
+  
   return (
     <div className="credit-card">
 
@@ -37,7 +56,7 @@ const Payment = () => {
       <form>
         <div className="row">
           <div className="col-sm-11">
-            <label for="name">Card Number</label>
+            <label for="name">Card Number</label><br></br><br></br>
             <input
               type="tel"
               className="form-control"
@@ -57,7 +76,7 @@ const Payment = () => {
         {/* CARD Name */}
         <div className="row">
           <div className="col-sm-11">
-            <label for="name">Card Name</label>
+            <label for="name">Card Name</label><br></br><br></br>
             <input
               type="text"
               className="form-control"
@@ -74,7 +93,7 @@ const Payment = () => {
 
         <div className="row1">
           <div className = "Label1">
-            <label for="month">Expiration Date</label>
+            <label for="month">Expiration Date</label><br></br><br></br>
           </div>
           <div className = "Label2">
             <label for="cvv">CVV</label>
@@ -146,11 +165,7 @@ const Payment = () => {
         <br />
 
         {/* CARD CONFIRM BUTTON */}
-        <input
-          type="submit"
-          className="btn btn-secondary form-control"
-          value="Submit"
-        />
+       <div>{checkout()}</div>
       </form>
     </div>
   );

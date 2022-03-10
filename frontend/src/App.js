@@ -1,4 +1,4 @@
-import {React, useEffect} from "react";
+import { React, useEffect } from "react";
 import { Routes, Route } from 'react-router-dom'
 import Navbar from "./components/Navbar";
 import Banner from "./components/Banner";
@@ -10,7 +10,10 @@ import SubCategories from "./components/SubCategories";
 import Tutorials from "./components/Tutorials";
 import Lessons from "./components/Lessons";
 import Footer from "./components/Footer"
+import Payment from "./components/Payment";
+import Register from "./components/Register";
 import './css/Preloader.css'
+import Signin from "./components/Signin";
 
 
 function App() {
@@ -21,7 +24,7 @@ function App() {
         document.getElementById('preloader').style.display = 'none';
         document.getElementById('allWebsite').style.display = 'block';
         clearInterval(interval)
-      }, 2000)
+      }, 1000)
     }
     preloader();
   }, []);
@@ -29,21 +32,24 @@ function App() {
   return (
     <div className="App">
       <div id="preloader">
-      <div id="loader" class="nfLoader"></div>
+        <div id="loader" class="nfLoader"></div>
       </div>
       <div id='allWebsite' style={{ display: "none" }}>
-      <Navbar />
-      <Routes>
-        <Route path={"/"} element={<Home />} />
-        <Route path={"/skills"} element={<Skills />} />
-        <Route path={"/aboutus"} element={<AboutUs />} />
-        <Route path={"/login"} element={<Login />} />
-        <Route path={"/subCategories/:id"} element={<SubCategories />} />
-        <Route path={"/subCategories/:id/tutorials/:id"} element={<Tutorials />} />
-        <Route path={"/subCategories/:id/tutorials/:id/lessons/:id"} element={<Lessons />} />
-      </Routes>
-      <Footer />
-    </div>
+        <Navbar />
+        <Banner />
+        <Routes>
+          <Route path={"/"} element={<Home />} />
+          <Route path={"/skills"} element={<Skills />} />
+          <Route path={"/aboutus"} element={<AboutUs />} />
+          <Route path={"/login"} element={<Signin />} />
+          <Route path={"/register"} element={<Register />} />
+          <Route path={"/subCategories/:id"} element={<SubCategories />} />
+          <Route path={"/subCategories/:id/tutorials/:id"} element={<Tutorials />} />
+          <Route path={"/subCategories/:id/tutorials/:id/lessons/:id"} element={<Lessons />} />
+          <Route path={"/payment"} element={<Payment />}></Route>
+        </Routes>
+        <Footer />
+      </div>
     </div>
   );
 }

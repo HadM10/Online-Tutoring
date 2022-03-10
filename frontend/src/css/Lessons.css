@@ -21,9 +21,14 @@
     margin: auto;
     overflow: hidden;
     background-color: wheat;
-    margin-bottom: 50px;
-    
+    margin-bottom: 50px;   
+    pointer-events:none;
+    opacity: 0.6;
 }
+
+/* .card-lessons-activated{
+
+} */
 
 .card-lessons:hover {
     transform: scale(1.05);
