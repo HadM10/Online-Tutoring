@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Cards from "react-credit-cards";
 import "react-credit-cards/es/styles-compiled.css";
+import { useNavigate, Link, useParams } from 'react-router-dom'
 import "../css/Payment.css";
 
 const Payment = () => {
@@ -17,6 +18,24 @@ const Payment = () => {
   const handleExpiry = (e) => {
     SetExpiry(month.concat(e.target.value));
   };
+
+  const navigate = useNavigate();
+
+  const checkout = () => {
+
+    const pay = async (e) => {
+        e.preventDefault()
+        const url =localStorage.getItem("url")
+        let intervalNav = await setInterval(() => {
+            localStorage.setItem("Payed", true)
+            console.log(localStorage.getItem("Payed"))
+            navigate(url)
+            clearInterval(intervalNav)
+        }, 1000)
+    }
+
+    return <div className='enroll-btn'><button className='card-button-lesson' onClick={pay}>Checkout</button></div>
+}
 
   return (
     <div className="credit-card">
@@ -146,11 +165,7 @@ const Payment = () => {
         <br />
 
         {/* CARD CONFIRM BUTTON */}
-        <input
-          type="submit"
-          className="btn btn-secondary form-control"
-          value="Submit"
-        />
+       <div>{checkout()}</div>
       </form>
     </div>
   );

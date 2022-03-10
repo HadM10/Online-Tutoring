@@ -26,9 +26,10 @@
     opacity: 0.6;
 }
 
-/* .card-lessons-activated{
-
-} */
+.card-lessons-activated{
+    pointer-events:all;
+    opacity: 1;
+}
 
 .card-lessons:hover {
     transform: scale(1.05);

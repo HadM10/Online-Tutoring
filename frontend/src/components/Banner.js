@@ -7,23 +7,35 @@ function Banner() {
         {
             video: "/Piano.mp4",
             title: "Music",
-            description: "Music is the moonlight in the gloomy night of life"
+            description: "Music is the moonlight in the gloomy night of life."
         },
         {
             video: "/cooking.mp4",
             title: "Cooking",
-            description: "Real cooking is more about following your heart than following recipes"
+            description: "Real cooking is more about following your heart than following recipes."
         },
         {
             video: "/martialarts.mp4",
             title: "Martial Arts",
-            description: "Given enough time, any man may master the physical. With enough knowledge, any man may become wise. It is the true warrior who can master both… and surpass the result"
+            description: "Given enough time, any man may master the physical. With enough knowledge, any man may become wise. It is the true warrior who can master both… and surpass the result."
         },
         {
             video: "/programming.mp4",
             title: "Programming",
-            description: "The best error message is the one that never shows up"
+            description: "The best error message is the one that never shows up."
+        },
+        {
+            video: "/painting.mp4",
+            title: "Painting",
+            description: "I don't paint dreams or nightmares, I paint my own reality."
+        },
+        {
+            video: "/gardening.mp4",
+            title: "Gardening",
+            description: "The glory of gardening: hands in the dirt, head in the sun, heart with nature. To nurture a garden is to feed not just the body, but the soul."
         }
+
+        
         
     ]
     const [newBanner, setNewBanner] = useState([])

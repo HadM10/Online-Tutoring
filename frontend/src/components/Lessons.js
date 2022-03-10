@@ -13,14 +13,22 @@ function Lessons() {
 
     useEffect(() => {
         retrieveLessons()
+        Payed()
     }, []);
 
     const [payed, handlePayed] = useState(false);
     const Payed = () => {
-        handlePayed(false)
+        console.log(payed)
+        if(localStorage.getItem("Payed")){         
+            handlePayed(localStorage.getItem("Payed"))
+            console.log(payed)
+        }
+        else{
+            handlePayed(false)
+        }
     }
 
-    localStorage.setItem("Payed", payed)
+    // localStorage.setItem("Payed", payed)
 
     const retrieveLessons = () => {
         Backend.getLessons(lessonId)
@@ -53,7 +61,8 @@ function Lessons() {
 
                 return (
                     <>
-                        <div class={`card-lessons ${payed && 'card-lessons-activated'}`}>
+                        <div className={`card-lessons ${payed && 'card-lessons-activated'}`}>
+                            {console.log(payed)}
 
                             <img src={Lesson.tutorial.photo} alt="lesson" className="lesson-img"></img>
 
