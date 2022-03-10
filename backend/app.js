@@ -3,15 +3,27 @@ const express = require('express')
 
 // providing a Connect/Express middleware that can be used to enable CORS with various options.
 const cors = require('cors')
+const bodyParser = require('body-parser');
+const cookieParser = require("cookie-parser");
 
 // indicating that this package has built-in type declarations.
 require('dotenv').config()
+const app = express();
+app.use(bodyParser.json());
+app.use(cookieParser());
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+app.use(cors( {  
+     origin: [
+    "http://localhost:3000",
+   
+  ],
+       
+    credentials: true}
+));
 
-const app = express()
 const port = process.env.PORT || 5000
-
-app.use(cors())
-
 //To serve static files such as images, CSS files, and JavaScript files, use the express.static built-in middleware function in Express.
 app.use('/public', express.static('public'));
 

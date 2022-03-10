@@ -14,7 +14,10 @@ import Payment from "./components/Payment";
 import Register from "./components/Register";
 import './css/Preloader.css'
 import Signin from "./components/Signin";
+import  axios from 'axios';
+import { AuthContextProvider } from './services/AuthContext.js';
 
+axios.defaults.withCredentials = true;
 
 function App() {
 
@@ -35,6 +38,7 @@ function App() {
         <div id="loader" class="nfLoader"></div>
       </div>
       <div id='allWebsite' style={{ display: "none" }}>
+      <AuthContextProvider>
         <Navbar />
         <Banner />
         <Routes>
@@ -49,6 +53,7 @@ function App() {
           <Route path={"/payment"} element={<Payment />}></Route>
         </Routes>
         <Footer />
+        </AuthContextProvider>
       </div>
     </div>
   );

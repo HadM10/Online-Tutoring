@@ -27,7 +27,7 @@
     opacity: 1;
     float: right;
     margin-right: 150px;
-    margin-top: 103px;
+    margin-top: 170px;
     font-family: 'Shippori Antique B1', sans-serif;
     background: #FFFFFF 0% 0% no-repeat padding-box;
     border: 1px solid #707070;
@@ -59,7 +59,7 @@
 .signin-form {
     position: relative;
     left: 19px;
-    padding-top: 50px;
+    padding-top: 20px;
     padding-bottom: 15px;
 }
 .signin-Input{
@@ -106,6 +106,8 @@
     height: 40px;
     transition-timing-function: ease-in;
     transition: all 1s;
+    padding: 0;
+    display: inline-block;
     text-align: center;
     
 }
@@ -129,7 +131,7 @@
 
 .singn-register-block{
     color: #654321;
-    float: left;
+    margin-left: -40px;
 }
 
 .sign-register-link{
@@ -156,12 +158,12 @@
 
 
 .signin-img {
-    background-blend-mode: overlay;
     z-index: 2;
     position: absolute;
-    width: 100%;
+    width: 90%;
     height: auto;
     margin-top: 20px;
     opacity: 1;
     margin-left: 22px;
+    padding-top: -10px;
 }
