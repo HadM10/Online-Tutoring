@@ -25,18 +25,17 @@
     border-radius: 2vw;
     opacity: 1;
     float: right;
-    margin-right: 100px;
+    margin-right: -450px;
     margin-top: -50px;
 }
 
 .login-img-home {
     z-index: 2;
-    position: absolute;
     width: 900px;
     height: auto;
     margin-top: 20px;
     opacity: 1;
-    margin-left: 22px;
+    margin-left: -600px;
 }
 
 .login-Title {
@@ -49,6 +48,7 @@
     letter-spacing: 3px;
     color: #FFFFFF;
     opacity: 1;
+    
 }
 
 .login-Text {
@@ -72,13 +72,7 @@
     opacity: 1;
 }
 
-.ligne {
-    width: 100%;
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
-    justify-content: space-evenly;
-}
+
 
 .join-Now {
     cursor: pointer;
