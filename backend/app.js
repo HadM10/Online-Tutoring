@@ -9,6 +9,8 @@ const cookieParser = require("cookie-parser");
 // indicating that this package has built-in type declarations.
 require('dotenv').config()
 const app = express();
+
+//added for signin and register
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({
