@@ -1,10 +1,13 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { Nav, NavItem, NavLink } from "react-bootstrap"
+import AuthContext from "../services/AuthContext";
 import '../css/Navbar.css'
+import LogOutBtn from "./Logout";
 
 function Navbar() {
     const [show, handleShow] = useState(false);
+    const { loggedIn } = useContext(AuthContext);
     const transitionNavBar = () => {
         if (window.scrollY > 100) {
             handleShow(true);
@@ -18,7 +21,9 @@ function Navbar() {
     }, []);
 
     return (
+        
         <div>
+            {loggedIn === false && (
             <Nav className={`nav ${show && 'nav_wood'}`} defaultSelected="Home">
                 <NavItem eventKey="Logo">
                     <Link to={"/"} className='logo'>
@@ -56,6 +61,46 @@ function Navbar() {
                     </Link>
                 </NavItem>
             </Nav>
+            )}
+            {loggedIn === true && (
+                <Nav className={`nav ${show && 'nav_wood'}`} defaultSelected="Home">
+                <NavItem eventKey="Logo">
+                    <Link to={"/"} className='logo'>
+                        <h1>TutoMania</h1>
+                    </Link>
+                </NavItem>
+                <div className='nav-components'>
+                    <NavItem eventKey="Home">
+                        <Link to={"/"} className="nav-items">
+                            <span>Home</span>
+                        </Link>
+                    </NavItem>
+                    <NavItem eventKey="Skills">
+                        <Link to={"/skills"} className="nav-items">
+                            <span>Skills</span>
+                        </Link>
+                    </NavItem>
+                    <NavItem eventKey="Aboutus">
+                        <Link to={"/aboutus"} className="nav-items">
+                            <span>About Us</span>
+                        </Link>
+                    </NavItem>
+                    <NavItem eventKey="Logout">
+                        <Link to={"/logout"} className="nav-items">
+                            <span><LogOutBtn/></span>
+                        </Link>
+                    </NavItem>
+                </div>
+                <NavItem eventKey="register">
+                    <Link to={"/profile"} style={{textDecoration: "none"}}>
+                        <div className={`register ${show && 'register_wood'}`}>
+                            <span style={{marginRight: "50px"}}>Profile</span>
+                            <img width='24px' height='24px' src={window.location.origin + '/avatar.png'}></img>
+                        </div>
+                    </Link>
+                </NavItem>
+            </Nav>
+            )}
         </div>
     )
 }

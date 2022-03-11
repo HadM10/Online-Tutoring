@@ -21,7 +21,7 @@
 .register-Input-phone{
     margin-right: 13px;
     margin-top: 15px;
-    width: 30% !important;
+    width: 170px !important;
     padding-left: 5px;
     height: 40px;
     background: #FFFFFF 0% 0% no-repeat padding-box;
@@ -79,7 +79,7 @@ align-self: center;
 select{
     margin-right: 13px;
     margin-top: 15px;
-    width: 30% !important;
+    width: 175px !important;
     padding-left: 5px;
     height: 44px;
     background: #FFFFFF 0% 0% no-repeat padding-box;
@@ -140,7 +140,6 @@ select{
 .register-form {
     position: relative;
     left: 19px;
-    padding-top: 25px;
     padding-bottom: 15px;
 }
 .register-Input{
@@ -185,6 +184,8 @@ select{
     height: 40px;
     transition-timing-function: ease-in;
     transition: all 1s;
+    padding: 0;
+    display: inline-block;
     text-align: center;
     
 }
@@ -249,5 +250,17 @@ select{
 /*/////////////////////////////*/
 
 .radio{
-  padding-top: 15px;
+  margin-top: 10px;
+  align-self: center;
+}
+
+.form-form{
+    margin-right: 0px;
+    padding-top: 130px !important;
+}
+
+.age-trainer{
+    display: flex;
+    width: 500px;
+
 }
