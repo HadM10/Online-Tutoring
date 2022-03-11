@@ -34,7 +34,7 @@ const Payment = () => {
         }, 1000)
     }
 
-    return <div className='enroll-btn'><button className='card-button-lesson' onClick={pay}>Checkout</button></div>
+    return <button className='card-button-pay' onClick={pay}>Checkout</button>
 }
 
   return (

@@ -74,14 +74,15 @@ form {
 }
 
 .credit-card{
-    background-color: white;
+    background-color: wheat;
     display: flex;
     flex-direction: column;
     border: 1px solid gray;
-    width: 500px;
+    width: 40%;
     padding-top: 30px;
-    margin-left: 600px;
-    margin-bottom: 50px;
+    margin-top: 100px !important;
+    margin-bottom: 100px !important;
+    margin: auto;
     box-shadow: 1px 2px 6px rgba(0, 0, 0), 1px 2px 4px rgba(0, 0, 0);
 }
 
@@ -89,21 +90,55 @@ form {
   width:400px;
   height:35px;
   background-color: white !important;
-  border: 1px solid gray;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0), 1px 2px 2px rgba(0, 0, 0);
+  border: none;
+  outline: none;
 
 }
 
 .form-control1, .form-control2{
-  width: 110px;
-  height:35px;
+  width: 100px !important;
+  height: 35px;
   margin-top: 20px;
   background-color: white;
   -webkit-appearance: none;
-  border: 1px solid gray;
+  border: none;
+  outline: none;
   margin-top: 5px;
   margin-right: 38px;
-  box-shadow: none !important;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0), 1px 2px 2px rgba(0, 0, 0);
 }
+
+.card-button-pay{
+  cursor: pointer;
+  color: wheat;
+  outline: none;
+  border: none;
+  font-weight: 700;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: 0.2vw;
+  margin-top: auto;
+  margin-left: 130px;
+  text-shadow: 1px 2px 6px rgba(0, 0, 0), 1px 2px 4px rgba(0, 0, 0);
+  background: linear-gradient(#171009c0, #654321);
+  text-align: center;
+  height: 40px;
+  width: 30%;
+  object-fit: contain;
+  transition-timing-function: ease-in;
+  transition: all 1s;
+  box-shadow: 1px 2px 6px rgba(0, 0, 0), 1px 2px 4px rgba(0, 0, 0);
+}
+
+.card-button-pay:hover {
+  transform: scale(1.04);
+  background: linear-gradient(#171009, #3b2814);
+  text-shadow: none;
+}
+
 
 .form-control2{
   box-shadow: none;
