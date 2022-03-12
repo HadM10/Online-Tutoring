@@ -1,14 +1,19 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import Backend from '../services/Backend'
 import { useNavigate, Link, useParams } from 'react-router-dom'
+import AuthContext from "../services/AuthContext";
 import "../css/Lessons.css"
+import DateFormat from '../services/DateFormat'
 import Payment from "./Payment"
 
 function Lessons() {
     const [Lessons, setLessons] = useState([])
+    const [dates, setDates] = useState('')
+    const [chosenDate, setChosenDate] = useState(null)
     const lessonId = useParams().id
     const url = window.location.pathname
     const navigate = useNavigate()
+    const { loggedIn } = useContext(AuthContext);
 
 
     useEffect(() => {
@@ -28,13 +33,17 @@ function Lessons() {
         }
     }
 
-    // localStorage.setItem("Payed", payed)
-
     const retrieveLessons = () => {
         Backend.getLessons(lessonId)
             .then(response => {
                 setLessons(response.data)
+                let arrDateTime = []
+                for(let i=0; i<response.data; i++){
+                arrDateTime[i] = response.data[i].dateTime.map((dateTime) => dateTime.DateTime)
+                }
+                console.log(arrDateTime)
                 console.log(response.data)
+                setDates(arrDateTime)
             })
             .catch(e => {
                 console.log(e)
@@ -53,7 +62,7 @@ function Lessons() {
             }, 1000)
         }
 
-        return <div className='enroll-btn'><button className='card-button-lesson' onClick={enroll}>Enroll</button></div>
+        return <div className={`enroll-btn ${loggedIn && 'enroll-btn-on'}`}><button className='card-button-lesson' onClick={enroll}>Enroll</button></div>
     }
     const displayLessons = () => {
         return (
@@ -62,7 +71,6 @@ function Lessons() {
                 return (
                     <>
                         <div className={`card-lessons ${payed && 'card-lessons-activated'}`}>
-                            {console.log(payed)}
 
                             <img src={Lesson.tutorial.photo} alt="lesson" className="lesson-img"></img>
 
@@ -70,6 +78,11 @@ function Lessons() {
                                 <h3 className="lesson-title">{Lesson.title}</h3>
                                 <p className='lesson-description'>{Lesson.description}</p>
                             </div>
+                            {/* <div className="dayData">
+                            <ul>
+                                {dates.map((dayData, i) => { return <li key={i} className={chosenDate === i ? 'active' : ''}>{DateFormat.formatDate(dayData)}</li> })}
+                            </ul>
+                        </div> */}
                             <div className='lesson-start'>
                                 <button className='card-button-lesson'>Start</button>
                             </div>
