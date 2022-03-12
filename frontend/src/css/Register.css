@@ -138,10 +138,23 @@ select{
     font-size: 20px;
 }
 
+.alert-danger{
+    color: #823200;
+    margin-bottom:0px;
+    margin-top: 20px;
+    margin-left: 60px;
+    font-weight: bold;
+    border: 1px solid  #823200;
+    width: 355px;
+    padding: 5px
+}
+
 .register-form {
     position: relative;
     left: 19px;
     padding-bottom: 15px;
+    margin-top:0px;
+    
 }
 .register-Input{
     width: 90% !important;
@@ -265,3 +278,8 @@ select{
     width: 500px;
 
 }
+
+.hide{
+    display: none;
+}
+

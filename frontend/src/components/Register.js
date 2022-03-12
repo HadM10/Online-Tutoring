@@ -1,8 +1,9 @@
 import React, { useState, useContext } from 'react'
-import { Link, useNavigate} from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../css/Register.css";
 import AuthContext from "../services/AuthContext";
+import $ from "jquery";
 
 const AlertStyle = {
   display: "none"
@@ -14,11 +15,12 @@ const Register = () => {
     lname: "",
     email: "",
     password: "",
-    age:null,
+    age: null,
     phone: "",
     country: "",
-    userType:"",
+    userType: ""
   })
+
   const [errorMessage, setErrorMessage] = useState('');
 
   const [className, setClassName] = useState('');
@@ -26,6 +28,17 @@ const Register = () => {
   const handleChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
   }
+
+  // jquery for trainer or trainee
+  $("#Trainee").change(function(){
+    var value = this.value;
+    if (value == "Trainee"){
+      $("#extra").hide();}
+      else if (value =="Trainer"){
+        $("#extra").show();
+      }
+    }
+  );
 
   const { getLoggedIn } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -45,8 +58,10 @@ const Register = () => {
       userType: user.userType
     };
 
+   
+
     axios
-      .post("http://localhost:5000/users/register", userData)
+      .post("http://localhost:5000/users/register", userData )
 
       .then((response) => {
         console.log(response.status)
@@ -73,22 +88,23 @@ const Register = () => {
     console.log(userData);
 
   };
-
+ 
   return (
     <div className="register-card">
-      <div className={className} style={AlertStyle} role="alert">{errorMessage} </div>
-        <img className='register-img' src={window.location.origin + '/doSome.png'} alt='Sign In'></img>
-        <form onSubmit={handleSubmit} className="form-form">
+      
+      <img className='register-img' src={window.location.origin + '/doSome.png'} alt='Sign In'></img>
+      <form onSubmit={handleSubmit} className="form-form">
         <div className="register-card2">
           <div className='register-Title'>Register</div>
           <div className='register-Text'>Trainee or Trainer?</div>
+          <div className={className} style={AlertStyle} role="alert">{errorMessage} </div>
           <form className="register-form"  >
             <div>
               <input className="register-Input-name" type="text" id="fname" name="fname" placeholder='First Name' onChange={handleChange} value={user.fname}></input>
               <input className="register-Input-name" type="text" id="lname" name="lname" placeholder='Last Name' onChange={handleChange} value={user.lname}></input>
             </div>
             <div>
-              <input className="register-Input-phone" type="number" id="phone" name="phone" placeholder='phone number' onChange={handleChange} value={user.phone}></input>
+              <input className="register-Input-phone" type="number" id="phone" name="phone" placeholder='Phone Number' onChange={handleChange} value={user.phone}></input>
               <select className="select" id="country" name="country" onChange={handleChange} value={user.country}>
                 <option value="" >Country</option >
                 <option value="Afganistan">Afghanistan</option>
@@ -341,32 +357,39 @@ const Register = () => {
             </div>
             <hr></hr>
             <div>
-              <input className="register-Input-name" type="text" id="email" name="email" placeholder='email' onChange={handleChange} value={user.email} ></input>
-              <input className="register-Input-name" type="password" id="signin-password" name="password" placeholder='password' onChange={handleChange} value={user.password} ></input>
+              <input className="register-Input-name" type="text" id="email" name="email" placeholder='Email' onChange={handleChange} value={user.email} ></input>
+              <input className="register-Input-name" type="password" id="signin-password" name="password" placeholder='Password' onChange={handleChange} value={user.password} ></input>
             </div>
             <div className="age-trainer">
-            <div>
-            <input className="register-Input-phone" type="number" id="age" name="age" placeholder='age' onChange={handleChange} value={user.age} ></input>
-            {/* <label for="file1" class="btn new_cover">Upload new cover</label>
+              <div>
+                <input className="register-Input-phone" type="number" id="age" name="age" placeholder='Age' onChange={handleChange} value={user.age} ></input>
+                {/* <label for="file1" class="btn new_cover">Upload new cover</label>
                                 <input id="file1" name="file1" style="visibility:hidden;" type="file">  </input> */}
-          </div>
+              </div>
 
-            <div className="radio">
-              <input type="radio" id="Trainee" name="fav_language" onChange={handleChange} value={user.userType="Trainee"}></input>
-              <label for="trainee">Trainee</label>
-              <input type="radio" id="trainer" name="fav_language" onChange={handleChange} value={user.userType="Trainer"}></input>
-              <label for="trainer">Trainer</label>
+              <select className="select" id="Trainee" name="userType" onChange={handleChange} value={user.userType}>
+                <option value="">User Type</option>
+                <option value="Trainee">Trainee</option>
+                <option value="Trainer">Trainer</option>
+              </select>
             </div>
+
+            <div className="hide" id="extra" >
+              <input type="text" className="register-Input-phone" name="certificate" placeholder='Certificate' />
+              <input type="text" className="register-Input-phone" name="speciality"  placeholder='Speciality'  />
             </div>
+
           </form>
           <div className='register-ligne'>
             <input className='register-join-Now' type='submit' value="Submit" />
             <div className='register-register-block'>Don't have an account? <br></br><Link className='register-register-link' to={"/login"}>Please Sign In </Link> </div>
           </div>
         </div>
-        </form>
+      </form>
     </div>
+
   )
+
 }
 
 export default Register
