@@ -27,24 +27,22 @@ function Tutorials() {
             tutorials.map((Tutorial) => {
                 return (
                     <>
-                    {/* < div className = 'tutorial-banner' > <img className='tutorial-banner-image' src={Tutorial.subCategories.banner}></img></div >
-                    <div className="tutorial-banner--fadeBottom"></div> */}
-                    <div class="card">
-                        {console.log(Tutorial)}
-                        <img src={Tutorial.photo} alt="category" className="tutorial-image"></img>
-                        {/* <img src={Tutorial.trainerId.photo} alt="category" className="tutorial-imagesmall"></img> */}
+                        <div class="card">
+                            {console.log(Tutorial)}
+                            <img src={Tutorial.photo} alt="category" className="tutorial-image"></img>
+                            {/* <img src={Tutorial.trainerId.photo} alt="category" className="tutorial-imagesmall"></img> */}
 
-                        <div className="tutorial-titles">
-                            <div className="tutorial-name"><h3 className="tutorial-title">{Tutorial.subCategories.name}</h3></div>
-                            <div className="tutorial-price"><h3 className="tutorial-title">{Tutorial.pricePerLesson}/hr</h3></div>
+                            <div className="tutorial-titles">
+                                <div className="tutorial-name"><h3 className="tutorial-title">{Tutorial.subCategories.name}</h3></div>
+                                <div className="tutorial-price"><h3 className="tutorial-title">{Tutorial.pricePerLesson}/hr</h3></div>
+                            </div>
+                            <p className='tutorial-maintitle'>{Tutorial.title}</p>
+                            <p className='tutorial-description'>{Tutorial.description}</p>
+                            <Link className='link-categories' to={`lessons/${Tutorial._id}`}>
+                                <button className='tutorial-button'>More</button>
+                            </Link>
+
                         </div>
-                        <p className='tutorial-maintitle'>{Tutorial.title}</p>
-                        <p className='tutorial-description'>{Tutorial.description}</p>
-                        <Link className='link-categories' to={`lessons/${Tutorial._id}`}>
-                        <button className='tutorial-button'>More</button>
-                        </Link>
-                        
-                    </div>
                     </>
                 )
             })
@@ -52,6 +50,9 @@ function Tutorials() {
     }
     return (
         <div>
+            <div className='tutorial-banner'> <img className='tutorial-banner-image' src='https://t4.ftcdn.net/jpg/01/65/87/51/240_F_165875182_bzOhEp77wKqWSNuo3D5CGH2PrqGfRZUt.jpg'></img>
+            <div className="tutorial-banner--fadeBottom"></div>
+            </div>
             <h1 className='get-started'>Check All Tutorials And Enroll</h1>
             <h2 className='new-skill'>__________Latest Tutorials__________</h2>
             <div class="flex-container wrap">

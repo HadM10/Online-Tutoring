@@ -40,7 +40,6 @@ function App() {
       <div id='allWebsite' style={{ display: "none" }}>
       <AuthContextProvider>
         <Navbar />
-        <Banner />
         <Routes>
           <Route path={"/"} element={<Home />} />
           <Route path={"/skills"} element={<Skills />} />

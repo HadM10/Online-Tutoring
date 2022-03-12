@@ -26,31 +26,32 @@ function SubCategories() {
 
                 return (
                     <>
-                    {/* < div className = 'subCategory-banner' > <img className='subCategory-banner-image' src={SubCategory.categoryId.banner}></img></div >
-                    <div className="subCategory-banner--fadeBottom"></div> */}
                         <div class="card">
-                        <Link className='link-categories' to={`tutorials/${SubCategory._id}`}>
-                            <img src={SubCategory.photo} alt="category" className="category-image"></img>
-                            {/* <div className="category-name"><h3 className="category-title"></h3></div> */}
+                            <Link className='link-categories' to={`tutorials/${SubCategory._id}`}>
+                                <img src={SubCategory.photo} alt="category" className="category-image"></img>
+                                {/* <div className="category-name"><h3 className="category-title"></h3></div> */}
                                 <button className='card-button-sub'>{SubCategory.name}</button>
                             </Link>
                         </div>
-                        </>
+                    </>
                 )
             })
         )
-}
-return (
+    }
+    return (
 
-    <div>
-        <h1 className='get-started'>Let's Get Started!</h1>
-        <h2 className='new-skill'>Learn a new skill online with a private tutor</h2>
-        <h3 className='levels'>Beginner, Intermediate & Advanced</h3>
-        <div class="flex-container wrap">
-            {displaySubCategories()}
+        <div>
+            <div className='subCategory-banner'><img className='subCategory-banner-image' src='https://cdn1.byjus.com/the-learning-tree/wp-content/uploads/2019/10/09072017/hobby_blog-banner.jpg'></img>
+            <div className="subCategory-banner--fadeBottom"></div>
+            </div >
+            <h1 className='get-started'>Let's Get Started!</h1>
+            <h2 className='new-skill'>Learn a new skill online with a private tutor</h2>
+            <h3 className='levels'>Beginner, Intermediate & Advanced</h3>
+            <div class="flex-container wrap">
+                {displaySubCategories()}
+            </div>
         </div>
-    </div>
-)
+    )
 }
 
 export default SubCategories

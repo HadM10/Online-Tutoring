@@ -1,5 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Shippori+Antique+B1&display=swap');
 
+.register-card{
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 20px;
+    width: 100%;
+    height: 768px;
+    margin-top: -35px !important;
+    background-size: cover;
+    z-index: 1;
+    object-fit: contain;
+    background: transparent linear-gradient(305deg, #171009 0%, #171009 25%, #823200 68%, #68411D 91%, #654321 100%) 0% 0% no-repeat padding-box;
+    opacity: 1;
+}
+
 .register-Input-name{
     margin-right: 13px;
     margin-top: 15px;
@@ -58,20 +72,7 @@ input[type="file" i] {
 
 
 
-.register-card{
-    align-items: center;
-    justify-content: center;
-    padding-bottom: 20px;
-    /* box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.308), 1px 2px 4px rgba(0, 0, 0, 0.301); */
-    width: 100%;
-    height: 768px;
-    background-size: cover;
-    z-index: 1;
-    object-fit: contain;
-    background: transparent linear-gradient(305deg, #171009 0%, #171009 25%, #823200 68%, #68411D 91%, #654321 100%) 0% 0% no-repeat padding-box;
-    /* border: 1px solid #707070; */
-    opacity: 1;
-}
+
 hr{
     width:400px;
 align-self: center;
@@ -110,7 +111,7 @@ select{
     opacity: 1;
     float: right;
     margin-right: 150px;
-    margin-top: 40px;
+    margin-top: px;
     font-family: 'Shippori Antique B1', sans-serif;
 
 }
