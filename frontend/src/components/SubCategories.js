@@ -29,11 +29,10 @@ function SubCategories() {
                     {/* < div className = 'subCategory-banner' > <img className='subCategory-banner-image' src={SubCategory.categoryId.banner}></img></div >
                     <div className="subCategory-banner--fadeBottom"></div> */}
                         <div class="card">
+                        <Link className='link-categories' to={`tutorials/${SubCategory._id}`}>
                             <img src={SubCategory.photo} alt="category" className="category-image"></img>
-                            <div className="category-name"><h3 className="category-title">{SubCategory.name}</h3></div>
-                            <p className='category-description'>{SubCategory.description}</p>
-                            <Link className='link-categories' to={`tutorials/${SubCategory._id}`}>
-                                <button className='card-button'>See More</button>
+                            {/* <div className="category-name"><h3 className="category-title"></h3></div> */}
+                                <button className='card-button-sub'>{SubCategory.name}</button>
                             </Link>
                         </div>
                         </>
