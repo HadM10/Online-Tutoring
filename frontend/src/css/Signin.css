@@ -61,6 +61,7 @@
     left: 19px;
     padding-top: 20px;
     padding-bottom: 15px;
+    margin-top: 5px
 }
 .signin-Input{
     margin-top: 15px;
@@ -127,6 +128,17 @@
     font-size: 10px;
     color: #654321;
     opacity: 1;
+}
+
+.alert-danger{
+    color: #823200;
+    margin-bottom:0px;
+    margin-top: 20px;
+    margin-left: 30px;
+    font-weight: bold;
+    border: 1px solid  #823200;
+    width: 355px;
+    padding: 5px
 }
 
 .singn-register-block{
