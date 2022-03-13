@@ -18,7 +18,12 @@ const Register = () => {
     age: null,
     phone: "",
     country: "",
-    userType: ""
+    userType: "",
+  })
+
+  const [trainer, setTrainer] = useState({
+    certificate: "",
+    speciality: "",
   })
 
   const [errorMessage, setErrorMessage] = useState('');
@@ -27,17 +32,19 @@ const Register = () => {
 
   const handleChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
+    setTrainer({ ...trainer, [e.target.name]: e.target.value });
   }
 
   // jquery for trainer or trainee
-  $("#Trainee").change(function(){
+  $("#Trainee").change(function () {
     var value = this.value;
-    if (value == "Trainee"){
-      $("#extra").hide();}
-      else if (value =="Trainer"){
-        $("#extra").show();
-      }
+    if (value == "Trainee") {
+      $("#extra").hide();
     }
+    else if (value == "Trainer") {
+      $("#extra").show();
+    }
+  }
   );
 
   const { getLoggedIn } = useContext(AuthContext);
@@ -55,13 +62,18 @@ const Register = () => {
       age: user.age,
       phone: user.phone,
       country: user.country,
-      userType: user.userType
+      userType: user.userType,
     };
 
-   
+    const trainerData = {
+      certificate: trainer.certificate,
+      speciality: trainer.speciality
+    };
+
+
 
     axios
-      .post("http://localhost:5000/users/register", userData )
+      .post("http://localhost:5000/users/register", userData)
 
       .then((response) => {
         console.log(response.status)
@@ -75,12 +87,35 @@ const Register = () => {
           navigate("/");
         }
 
-
       }).catch((error) => {
         if (error.response.status === 400) {
           setErrorMessage((error.response.data.message));
-          setClassName("alert alert-danger")
-          document.getElementsByClassName("alert alert-danger")[0].style.display = 'block';
+          setClassName("alert alert-danger1")
+          document.getElementsByClassName("alert alert-danger1")[0].style.display = 'block';
+        }
+
+      });
+
+    axios
+      .post("http://localhost:5000/trainers", trainerData)
+
+      .then((response1) => {
+        console.log(response1.status)
+
+        if (response1.status === 200) {
+
+          setErrorMessage(("Signed Up successfully"));
+          setClassName("alert alert-success")
+          document.getElementsByClassName("alert alert-success")[0].style.display = 'block';
+          getLoggedIn();
+          navigate("/");
+        }
+
+      }).catch((error1) => {
+        if (error1.response1.status === 400) {
+          setErrorMessage((error1.response1.data.message));
+          setClassName("alert alert-danger1")
+          document.getElementsByClassName("alert alert-danger1")[0].style.display = 'block';
         }
 
       });
@@ -88,10 +123,10 @@ const Register = () => {
     console.log(userData);
 
   };
- 
+
   return (
     <div className="register-card">
-      
+
       <img className='register-img' src={window.location.origin + '/doSome.png'} alt='Sign In'></img>
       <form onSubmit={handleSubmit} className="form-form">
         <div className="register-card2">
@@ -375,8 +410,8 @@ const Register = () => {
             </div>
 
             <div className="hide" id="extra" >
-              <input type="text" className="register-Input-phone" name="certificate" placeholder='Certificate' />
-              <input type="text" className="register-Input-phone" name="speciality"  placeholder='Speciality'  />
+              <input type="text" className="register-Input-phone" name="certificate" onChange={handleChange} placeholder='Certificate' value={trainer.certificate} />
+              <input type="text" className="register-Input-phone" name="speciality" onChange={handleChange} placeholder='Speciality' value={trainer.speciality} />
             </div>
 
           </form>

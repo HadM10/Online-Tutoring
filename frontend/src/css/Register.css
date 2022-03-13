@@ -139,11 +139,11 @@ select{
     font-size: 20px;
 }
 
-.alert-danger{
+.alert-danger1{
     color: #823200;
     margin-bottom:0px;
     margin-top: 20px;
-    margin-left: 60px;
+    margin-left: 58px !important;
     font-weight: bold;
     border: 1px solid  #823200;
     width: 355px;
