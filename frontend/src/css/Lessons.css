@@ -57,6 +57,11 @@
     margin: 50px;
 }
 
+.dayData{
+    float: left;
+    margin: 50px; 
+}
+
 .card-button-lesson {
     cursor: pointer;
     color: wheat;
