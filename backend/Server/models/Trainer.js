@@ -8,21 +8,18 @@ const trainerSchema = new mongoose.Schema({
     
     certificate: {
         type: String,
-        required: true,
         min: 3,
         max: 25
     },
 
     speciality: {
         type: String,
-        required: true,
         min: 3,
         max: 25
     },
 
     meetingUrl: {
         type: String,
-        required: true
     }
 }, { timestamps: true })
 
