@@ -77,6 +77,7 @@ function Lessons() {
                                 <p className='lesson-description'>{Lesson.description}</p>
                                 {/* {console.log(Lesson.tutorial.dateTime.map((datet) => {datet.DateTime}))} */}
                             </div>
+                            <div className='starting'>
                              <div className="dayData">
                              <button className='card-button-lesson'>{DateFormat.formatDate(Lesson.tutorial.dateTime[0].DateTime)}</button>
                             {/* <ul>
@@ -85,6 +86,7 @@ function Lessons() {
                         </div>
                             <div className='lesson-start'>
                                 <button className='card-button-lesson'>Start</button>
+                            </div>
                             </div>
                         </div>
                     </>
