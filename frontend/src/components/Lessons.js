@@ -77,12 +77,14 @@ function Lessons() {
                             <div className="lesson-info">
                                 <h3 className="lesson-title">{Lesson.title}</h3>
                                 <p className='lesson-description'>{Lesson.description}</p>
+                                {/* {console.log(Lesson.tutorial.dateTime.map((datet) => {datet.DateTime}))} */}
                             </div>
-                            {/* <div className="dayData">
-                            <ul>
+                             <div className="dayData">
+                             <button className='card-button-lesson'>{DateFormat.formatDate(Lesson.tutorial.dateTime[0].DateTime)}</button>
+                            {/* <ul>
                                 {dates.map((dayData, i) => { return <li key={i} className={chosenDate === i ? 'active' : ''}>{DateFormat.formatDate(dayData)}</li> })}
-                            </ul>
-                        </div> */}
+                            </ul> */}
+                        </div>
                             <div className='lesson-start'>
                                 <button className='card-button-lesson'>Start</button>
                             </div>
@@ -94,11 +96,12 @@ function Lessons() {
     }
     return (
         <div>
+            <div className='subCategory-banner'><img className='subCategory-banner-image' src='https://cdn1.byjus.com/the-learning-tree/wp-content/uploads/2019/10/09072017/hobby_blog-banner.jpg'></img>
+            <div className="subCategory-banner--fadeBottom"></div>
+            </div >
             <h1 className='get-started'>Let's Get Started!</h1>
             <h2 className='new-skill'>Learn a new skill online with a private tutor</h2>
             <h3 className='levels'>Beginner, Intermediate & Advanced</h3>
-            {/* <Link className='link-categories' to={`lessons/${Payment}`}>
-            </Link> */}
             <div>{enrollPay()}</div>
             <div class="">
                 {displayLessons()}
