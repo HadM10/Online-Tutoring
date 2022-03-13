@@ -26,12 +26,9 @@ const Payment = () => {
     const pay = async (e) => {
         e.preventDefault()
         const url =localStorage.getItem("url")
-        let intervalNav = await setInterval(() => {
             localStorage.setItem("Payed", true)
             console.log(localStorage.getItem("Payed"))
             navigate(url)
-            clearInterval(intervalNav)
-        }, 1000)
     }
 
     return <button className='card-button-pay' onClick={pay}>Checkout</button>

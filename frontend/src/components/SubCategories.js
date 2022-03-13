@@ -28,8 +28,8 @@ function SubCategories() {
                     <>
                         <div class="card">
                             <Link className='link-categories' to={`tutorials/${SubCategory._id}`}>
-                                <img src={SubCategory.photo} alt="category" className="category-image"></img>
-                                {/* <div className="category-name"><h3 className="category-title"></h3></div> */}
+                                <img src={SubCategory.photo} alt="subCategory" className="subCategory-image"></img>
+                                {/* <div className="subCategory-name"><h3 className="category-title"></h3></div> */}
                                 <button className='card-button-sub'>{SubCategory.name}</button>
                             </Link>
                         </div>

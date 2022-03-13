@@ -56,10 +56,8 @@ function Lessons() {
             e.preventDefault()
             localStorage.setItem("url", url)
             console.log(url)
-            let intervalNav = await setInterval(() => {
-                navigate('/payment')
-                clearInterval(intervalNav)
-            }, 1000)
+            navigate('/payment')
+        
         }
 
         return <div className={`enroll-btn ${loggedIn && 'enroll-btn-on'}`}><button className='card-button-lesson' onClick={enroll}>Enroll</button></div>
@@ -102,7 +100,8 @@ function Lessons() {
             <h1 className='get-started'>Let's Get Started!</h1>
             <h2 className='new-skill'>Learn a new skill online with a private tutor</h2>
             <h3 className='levels'>Beginner, Intermediate & Advanced</h3>
-            <div>{enrollPay()}</div>
+            <div className='enrollment'>{enrollPay()} <div className={`sign-in-request ${loggedIn && 'sign-in-done'}`}>Sign In First</div></div> 
+
             <div class="">
                 {displayLessons()}
             </div>
