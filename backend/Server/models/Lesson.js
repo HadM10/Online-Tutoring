@@ -12,7 +12,7 @@ const lessonSchema = new mongoose.Schema({
             type: mongoose.SchemaTypes.ObjectId,
             ref: "Users"
         },
-        chosenDate: Date,
+        chosenDate: String,
         done: Boolean
     }],
 }, { timestamps: true })

@@ -40,7 +40,7 @@
     margin: auto;
     background-color: #171009;
     padding: 10px;
-    margin-left: -100px;
+    margin-left: -50px;
 }
 
 .sign-in-done{
@@ -91,6 +91,20 @@
 .dayData{
     float: left;
     margin-top: 50px; 
+}
+
+.date-button-lesson{
+    outline: none;
+    border: none;
+    text-shadow: 1px 2px 6px rgba(0, 0, 0), 1px 2px 4px rgba(0, 0, 0);
+    background: linear-gradient(#171009c0, #654321);
+    margin-top: auto;
+    color: wheat;
+}
+
+option{
+    background-color: #1f140ac0;
+    color: wheat;
 }
 
 .card-button-lesson {

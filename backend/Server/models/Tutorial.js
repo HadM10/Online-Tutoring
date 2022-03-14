@@ -16,7 +16,7 @@ const tutorialSchema = new mongoose.Schema({
     },
     dateTime: [
         {
-            DateTime: Date,
+            DateTime: String,
             available: Boolean
         }
     ]

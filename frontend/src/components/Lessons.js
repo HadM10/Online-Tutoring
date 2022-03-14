@@ -37,17 +37,6 @@ function Lessons() {
         Backend.getLessons(lessonId)
             .then(response => {
                 setLessons(response.data)
-                // let arrDateTime = []
-                // console.log(response.data)
-                // let theDate = response.data[0].tutorial.dateTime
-                // console.log(theDate)
-                // // for(let i=0; i<theDate.length; i++){
-                // // arrDateTime.push(theDate[i].DateTime)
-                // // }
-                // arrDateTime.push(theDate)
-                // console.log(arrDateTime)
-                // console.log(response.data)
-                // setDates(arrDateTime)
             })
             .catch(e => {
                 console.log(e)
@@ -93,8 +82,8 @@ function Lessons() {
                             <div className='starting'>
                                 <div className="dayData">
                                     {console.log(dates)}
-                                    <select className='card-button-lesson' onChange={(e) => setDates(e.target.value)}> <option key={-1} value='Choose Datetime'>Choose DateTime</option>
-                                        {Lesson.tutorial.dateTime.map((dayData, i) => { return <option key={i} value={dayData.DateTime}> {DateFormat.formatDate(dayData.DateTime)}</option> })}
+                                    <select className='date-button-lesson' onChange={(e) => setDates(e.target.value)}> <option key={-1} value='Choose Datetime'>Choose DateTime</option>
+                                        {Lesson.tutorial.dateTime.map((dayData, i) => { return <option key={i} value={dayData.DateTime}> {dayData.DateTime}</option> })}
                                     </select>
                                 </div>
                                 <div className='lesson-start'>

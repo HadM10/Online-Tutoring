@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import '../css/Tutorials.css';
 import Backend from "../services/Backend";
+import Banner from "./Banner";
+import { Link, useParams } from 'react-router-dom'
 
 
 function AllTutorials() {
@@ -36,18 +38,22 @@ function AllTutorials() {
                         </div>
                         <p className='tutorial-maintitle'>{Tutorial.title}</p>
                         <p className='tutorial-description'>{Tutorial.description}</p>
+                        <Link className='link-categories' to={`lessons/${Tutorial._id}`}>
                         <button className='tutorial-button'>More</button>
+                        </Link>
                     </div>
                 )
             })
         )
     }
     return (
-        <div className="all-tutorials">
-            <h1 className='get-started'>Check All Tutorials And Enroll</h1>
-            <h2 className='new-skill'>__________Latest Tutorials__________</h2>
-            <div class="flex-container wrap">
-                {displayTutorials()}
+        <div><Banner />
+            <div className="all-tutorials">
+                <h1 className='get-started'>Check All Tutorials And Enroll</h1>
+                <h2 className='new-skill'>__________Latest Tutorials__________</h2>
+                <div class="flex-container wrap">
+                    {displayTutorials()}
+                </div>
             </div>
         </div>
     )

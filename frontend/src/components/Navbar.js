@@ -36,8 +36,8 @@ function Navbar() {
                         </Link>
                     </NavItem>
                     <NavItem eventKey="Skills">
-                        <Link to={"/skills"} className="nav-items">
-                            <span>Skills</span>
+                        <Link to={"/tutorials"} className="nav-items">
+                            <span>Tutorials</span>
                         </Link>
                     </NavItem>
                     <NavItem eventKey="Aboutus">

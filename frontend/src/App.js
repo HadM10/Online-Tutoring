@@ -16,6 +16,7 @@ import './css/Preloader.css'
 import Signin from "./components/Signin";
 import  axios from 'axios';
 import { AuthContextProvider } from './services/AuthContext.js';
+import AllTutorials from "./components/AllTutorials";
 
 axios.defaults.withCredentials = true;
 
@@ -42,11 +43,12 @@ function App() {
         <Navbar />
         <Routes>
           <Route path={"/"} element={<Home />} />
-          <Route path={"/skills"} element={<Skills />} />
+          <Route path={"/tutorials"} element={<AllTutorials />} />
           <Route path={"/aboutus"} element={<AboutUs />} />
           <Route path={"/login"} element={<Signin />} />
           <Route path={"/register"} element={<Register />} />
           <Route path={"/subCategories/:id"} element={<SubCategories />} />
+          <Route path={"tutorials/lessons/:id"} element={<Lessons />} />
           <Route path={"/subCategories/:id/tutorials/:id"} element={<Tutorials />} />
           <Route path={"/subCategories/:id/tutorials/:id/lessons/:id"} element={<Lessons />} />
           <Route path={"/payment"} element={<Payment />}></Route>
