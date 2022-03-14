@@ -2,7 +2,7 @@ import React from 'react'
 import Banner from './Banner'
 import Ourtrainers from './Ourtrainers'
 import Categories from './Categories'
-import AllTutorials from './AllTutorials'
+import LatestTutorials from './LatestTutorials'
 import TraineeComments from './Comments'
 import Login from './Login'
 
@@ -12,7 +12,7 @@ function Home() {
         <Banner />
         <Categories />
         <Login />
-        <AllTutorials />
+        <LatestTutorials />
         <Ourtrainers />     
         <TraineeComments />  
         

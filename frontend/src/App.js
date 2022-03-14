@@ -17,6 +17,7 @@ import Signin from "./components/Signin";
 import  axios from 'axios';
 import { AuthContextProvider } from './services/AuthContext.js';
 import AllTutorials from "./components/AllTutorials";
+import ProfileTrainee from "./components/ProfileTrainee";
 
 axios.defaults.withCredentials = true;
 
@@ -47,6 +48,7 @@ function App() {
           <Route path={"/aboutus"} element={<AboutUs />} />
           <Route path={"/login"} element={<Signin />} />
           <Route path={"/register"} element={<Register />} />
+          <Route path={"/profile"} element={<ProfileTrainee />} />
           <Route path={"/subCategories/:id"} element={<SubCategories />} />
           <Route path={"tutorials/lessons/:id"} element={<Lessons />} />
           <Route path={"/subCategories/:id/tutorials/:id"} element={<Tutorials />} />
