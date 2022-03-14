@@ -24,11 +24,11 @@ function Lessons() {
     const [payed, handlePayed] = useState(false);
     const Payed = () => {
         console.log(payed)
-        if(localStorage.getItem("Payed")){         
+        if (localStorage.getItem("Payed")) {
             handlePayed(localStorage.getItem("Payed"))
             console.log(payed)
         }
-        else{
+        else {
             handlePayed(false)
         }
     }
@@ -37,17 +37,30 @@ function Lessons() {
         Backend.getLessons(lessonId)
             .then(response => {
                 setLessons(response.data)
-                let arrDateTime = []
-                for(let i=0; i<response.data; i++){
-                arrDateTime[i] = response.data[i].dateTime.map((dateTime) => dateTime.DateTime)
-                }
-                console.log(arrDateTime)
-                console.log(response.data)
-                setDates(arrDateTime)
+                // let arrDateTime = []
+                // console.log(response.data)
+                // let theDate = response.data[0].tutorial.dateTime
+                // console.log(theDate)
+                // // for(let i=0; i<theDate.length; i++){
+                // // arrDateTime.push(theDate[i].DateTime)
+                // // }
+                // arrDateTime.push(theDate)
+                // console.log(arrDateTime)
+                // console.log(response.data)
+                // setDates(arrDateTime)
             })
             .catch(e => {
                 console.log(e)
             })
+    }
+
+    const confirmLesson = () => {
+        if(!dates){
+            //SEND DATES AND LESSON_ID AND TUTORIAL_ID
+        }
+        else{
+            //choose a date
+        }
     }
 
     const enrollPay = () => {
@@ -57,7 +70,7 @@ function Lessons() {
             localStorage.setItem("url", url)
             console.log(url)
             navigate('/payment')
-        
+
         }
 
         return <div className={`enroll-btn ${loggedIn && 'enroll-btn-on'}`}><button className='card-button-lesson' onClick={enroll}>Enroll</button></div>
@@ -78,15 +91,15 @@ function Lessons() {
                                 {/* {console.log(Lesson.tutorial.dateTime.map((datet) => {datet.DateTime}))} */}
                             </div>
                             <div className='starting'>
-                             <div className="dayData">
-                             <button className='card-button-lesson'>{DateFormat.formatDate(Lesson.tutorial.dateTime[0].DateTime)}</button>
-                            {/* <ul>
-                                {dates.map((dayData, i) => { return <li key={i} className={chosenDate === i ? 'active' : ''}>{DateFormat.formatDate(dayData)}</li> })}
-                            </ul> */}
-                        </div>
-                            <div className='lesson-start'>
-                                <button className='card-button-lesson'>Start</button>
-                            </div>
+                                <div className="dayData">
+                                    {console.log(dates)}
+                                    <select className='card-button-lesson' onChange={(e) => setDates(e.target.value)}> <option key={-1} value='Choose Datetime'>Choose DateTime</option>
+                                        {Lesson.tutorial.dateTime.map((dayData, i) => { return <option key={i} value={dayData.DateTime}> {DateFormat.formatDate(dayData.DateTime)}</option> })}
+                                    </select>
+                                </div>
+                                <div className='lesson-start'>
+                                    <button className='card-button-lesson' onClick={confirmLesson}>Confirm</button>
+                                </div>
                             </div>
                         </div>
                     </>
@@ -97,12 +110,12 @@ function Lessons() {
     return (
         <div>
             <div className='subCategory-banner'><img className='subCategory-banner-image' src='https://cdn1.byjus.com/the-learning-tree/wp-content/uploads/2019/10/09072017/hobby_blog-banner.jpg'></img>
-            <div className="subCategory-banner--fadeBottom"></div>
+                <div className="subCategory-banner--fadeBottom"></div>
             </div >
             <h1 className='get-started'>Let's Get Started!</h1>
             <h2 className='new-skill'>Learn a new skill online with a private tutor</h2>
             <h3 className='levels'>Beginner, Intermediate & Advanced</h3>
-            <div className='enrollment'>{enrollPay()} <div className={`sign-in-request ${loggedIn && 'sign-in-done'}`}>Sign In First</div></div> 
+            <div className='enrollment'>{enrollPay()} <div className={`sign-in-request ${loggedIn && 'sign-in-done'}`}>Sign In First</div></div>
 
             <div class="">
                 {displayLessons()}
