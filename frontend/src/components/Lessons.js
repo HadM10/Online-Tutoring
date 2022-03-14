@@ -10,7 +10,7 @@ function Lessons() {
     const [Lessons, setLessons] = useState([])
     const [dates, setDates] = useState('')
     const [chosenDate, setChosenDate] = useState(null)
-    const lessonId = useParams().id
+    const tutorialId = useParams().id
     const url = window.location.pathname
     const navigate = useNavigate()
     const { loggedIn } = useContext(AuthContext);
@@ -34,7 +34,7 @@ function Lessons() {
     }
 
     const retrieveLessons = () => {
-        Backend.getLessons(lessonId)
+        Backend.getLessons(tutorialId)
             .then(response => {
                 setLessons(response.data)
             })
@@ -43,12 +43,21 @@ function Lessons() {
             })
     }
 
-    const confirmLesson = () => {
-        if(!dates){
+    const confirmLesson = (id) => {
+        if(dates && dates !== 0){
             //SEND DATES AND LESSON_ID AND TUTORIAL_ID
-        }
+            Backend.saveDateTime({"dateTime": dates, "tutorialId": tutorialId}, id)
+            .then(response => {
+                console.log(response.data)
+            })
+            .catch(e => {
+                console.log(e)
+            })
+    }
+        
         else{
             //choose a date
+            alert("choose a date")
         }
     }
 
@@ -82,12 +91,12 @@ function Lessons() {
                             <div className='starting'>
                                 <div className="dayData">
                                     {console.log(dates)}
-                                    <select className='date-button-lesson' onChange={(e) => setDates(e.target.value)}> <option key={-1} value='Choose Datetime'>Choose DateTime</option>
+                                    <select className='date-button-lesson' onChange={(e) => setDates(e.target.value)}> <option key={-1} value={0}>Choose DateTime</option>
                                         {Lesson.tutorial.dateTime.map((dayData, i) => { return <option key={i} value={dayData.DateTime}> {dayData.DateTime}</option> })}
                                     </select>
                                 </div>
                                 <div className='lesson-start'>
-                                    <button className='card-button-lesson' onClick={confirmLesson}>Confirm</button>
+                                    <button className='card-button-lesson' onClick={() => confirmLesson(Lesson._id)}>Confirm</button>
                                 </div>
                             </div>
                         </div>

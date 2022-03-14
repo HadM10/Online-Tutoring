@@ -44,6 +44,11 @@ class Backend {
     getComments() {
         return axios.get('/chats')
     }
+
+    saveDateTime(data, id){
+        console.log(data)
+        return axios.post(`lessons/saveDate/${id}`, data)
+    }
   }
 
 export default new Backend()

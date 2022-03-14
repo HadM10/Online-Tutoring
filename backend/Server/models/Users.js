@@ -54,7 +54,7 @@ const UsersSchema = new Schema({
     userType: {
         type: String,
         enum:["Trainer", "Trainee"]
-    } ,
+    }
 }, { timestamps: true });
 
 module.exports = mongoose.model("Users", UsersSchema);
