@@ -48,6 +48,11 @@ class Backend {
     getProfile() {
         return axios.get('/users/6217582386a82b6a045dc087')
     }
-  }
+    saveDateTime(data, id){
+        console.log(data)
+        return axios.post(`lessons/saveDate/${id}`, data)
+    }
+
+}
 
 export default new Backend()

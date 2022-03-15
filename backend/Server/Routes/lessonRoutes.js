@@ -10,5 +10,8 @@ router.route('/:id')
     .put(lessonController.editLesson)
     .get(lessonController.Lesson)
 
+router.route('/saveDate/:id')
+    .post(lessonController.saveDate)
+
 
 module.exports = router
