@@ -67,6 +67,7 @@ exports.saveDate = async (req, res) => {
     const id = req.params.id
     const tutorialId = req.body.tutorialId
 
+    //DATETIME NOT AVAILABLE ANYMORE
     const Tutorials = await Tutorial.find({ _id: tutorialId })
     let dateTimeTutorial = Tutorials[0].dateTime
     for (let i = 0; i < dateTimeTutorial.length; i++) {
@@ -74,18 +75,20 @@ exports.saveDate = async (req, res) => {
         dateTimeTutorial[i].available = false
       }
     }
-    console.log("the date time", dateTimeTutorial)
     Tutorials[0].dateTime = dateTimeTutorial
-    console.log(Tutorials[0])
     const newTutorial = await Tutorial.findByIdAndUpdate({ _id: tutorialId }, Tutorials[0])
+
+    //CHOOSE A DATETIME FOR THE LESSON
     const Lessons = await Lesson.find({ _id: id })
       .populate({ path: 'tutorial', model: 'Tutorial' })
       .populate({ path: 'trainee.userId', model: 'Users' })
+
     // let userId = '621790ee6afd8fc5bf7c11f6'
-    console.log(Lessons[0].trainee)
     const token = req.cookies.token;
     if (!token) return res.json(false);
     let userId = jwt.verify(token, process.env.TOKEN_SECRET);
+
+    
     let traineeDate = { "userId": ObjectId(userId), "chosenDate": req.body.dateTime, "done": false }
     Lessons[0].trainee.push(traineeDate)
     const newLesson = await Lesson.findByIdAndUpdate({ _id: id }, Lessons[0])
