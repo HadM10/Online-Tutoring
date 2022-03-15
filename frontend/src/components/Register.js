@@ -4,6 +4,7 @@ import axios from "axios";
 import "../css/Register.css";
 import AuthContext from "../services/AuthContext";
 import $ from "jquery";
+import { ReactSession } from 'react-client-session';
 
 const AlertStyle = {
   display: "none"
@@ -64,6 +65,7 @@ const Register = () => {
       country: user.country,
       userType: user.userType,
     };
+        ReactSession.set("email", user.email);
 
     const trainerData = {
       certificate: trainer.certificate,

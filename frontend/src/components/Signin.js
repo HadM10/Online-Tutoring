@@ -3,6 +3,7 @@ import {useNavigate, Link } from "react-router-dom";
 import "../css/Signin.css";
 import axios from "axios";
 import AuthContext from "../services/AuthContext";
+import { ReactSession } from 'react-client-session';
 
 // import Backend from '../services/Backend';
 
@@ -16,9 +17,9 @@ function Signin() {
      
     email : "",
     password : "",
- 
-
 })
+
+ReactSession.setStoreType("localStorage");
 const [errorMessage, setErrorMessage] = useState('');
 
 const [className, setClassName] = useState('');
@@ -35,12 +36,11 @@ const handleSubmit = e =>{
     
   
     const userData = {
-    
       email: user.email,
       password: user.password,
-     
-    
     };
+
+    ReactSession.set("email", user.email);
 
     axios
       .post("http://localhost:5000/users/login", userData)
