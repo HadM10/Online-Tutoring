@@ -44,6 +44,10 @@ class Backend {
     getComments() {
         return axios.get('/chats')
     }
+
+    getProfile() {
+        return axios.get('/users/6217582386a82b6a045dc087')
+    }
   }
 
 export default new Backend()

@@ -123,7 +123,10 @@ router.route("/profilepic").patch(userController.uploadPhoto, userController.upd
 router
   .route("/:id")
   .get(userController.findUser)
-  .patch(userController.updateUser)
+  // .patch(userController.updateUser)
   .delete(userController.deleteUser);
+
+  router.route("/").get(userController.findEmail)
+  router.route("/").put(userController.updateUser)
 
 module.exports = router;
