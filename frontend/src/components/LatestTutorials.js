@@ -11,7 +11,7 @@ function LatestTutorials() {
     }, []);
 
     const retrieveTutorials = () => {
-        Backend.getTutorials()
+        Backend.getLatestTutorials()
             .then((response) => {
                 setTutorials(response.data)
                 console.log(response.data)

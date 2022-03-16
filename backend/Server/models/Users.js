@@ -54,7 +54,14 @@ const UsersSchema = new Schema({
     userType: {
         type: String,
         enum:["Trainer", "Trainee"]
-    }
+    },
+    myLessons: [{
+        lessonId: {
+        type: mongoose.SchemaTypes.ObjectId,
+        ref: "Lesson" },
+    chosenDateTime: String
+}
+]
 }, { timestamps: true });
 
 module.exports = mongoose.model("Users", UsersSchema);
