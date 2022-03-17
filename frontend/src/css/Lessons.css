@@ -1,3 +1,15 @@
+#confirmButton{
+    display: block;
+    transition-timing-function: ease-in;
+    transition: all 1s;
+}
+
+#done{
+    display: none;
+    transition-timing-function: ease-in;
+    transition: all 1s;
+}
+
 .enroll-btn {
     width: 30%;
     margin: auto;

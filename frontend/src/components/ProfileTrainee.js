@@ -37,7 +37,8 @@ const ProfileTrainee = () => {
 		phone: user.phone,
 		country: user.country,
 		userType: user.userType,
-		photo: user.photo
+		photo: user.photo,
+		myLessons: user.myLessons
 	};
 	const getProfile = () => {
 		axios.get('http://localhost:5000/users/?email=' + username)
@@ -97,6 +98,7 @@ const ProfileTrainee = () => {
 						<p className="profile-text"><strong>Age:</strong> {profile.age}</p>
 						<p className="profile-text"><strong>Country:</strong> {profile.country}</p>
 						<p className="profile-text"><strong>UserType:</strong> {profile.userType}</p>
+						{/* <div>{profile.myLessons[0].lessonId.title}</div> */}
 					</div>
 				)
 			})
@@ -140,6 +142,7 @@ const ProfileTrainee = () => {
 
 
 				</form>
+				
 			</div>
 		)
 

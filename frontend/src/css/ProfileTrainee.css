@@ -1,6 +1,10 @@
  @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Shippori+Antique+B1&display=swap');
 
-
+.the-chosen-lessons{
+    width: 50%;
+    margin: auto;
+    height: 200px;
+}
 .profile-content{
     display:flex;
     flex-direction: column;

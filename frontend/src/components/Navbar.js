@@ -41,7 +41,7 @@ function Navbar() {
                         </Link>
                     </NavItem>
                     <NavItem eventKey="Aboutus">
-                        <Link to={"/aboutus"} className="nav-items">
+                        <Link to={"/trainer"} className="nav-items">
                             <span>About Us</span>
                         </Link>
                     </NavItem>

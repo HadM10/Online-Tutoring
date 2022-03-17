@@ -71,6 +71,9 @@ exports.saveDate = async (req, res) => {
     // console.log(req.cookies)
     // if (!token) return res.json(false);
     // let userId = jwt.verify(token, process.env.TOKEN_SECRET);
+    // let userId = req.body.username
+
+    // console.log("USER EMAIL", userId)
     let userId = '621790ee6afd8fc5bf7c11f6'
 
     console.log(userId)

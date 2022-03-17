@@ -11,6 +11,9 @@ router.route('/')
 router.route('/latest')
     .get(tutorialController.latestTutorials)
 
+router.route('/trainer')
+    .get(tutorialController.trainerTutorials)
+
 router.route('/:id')
     .delete(tutorialController.deleteTutorial)
     .put(tutorialController.editTutorial)
