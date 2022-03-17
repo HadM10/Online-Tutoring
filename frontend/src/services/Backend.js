@@ -22,6 +22,10 @@ class Backend {
         return axios.get('/tutorials')
     }
 
+    getLatestTutorials() {
+        return axios.get('/tutorials/latest')
+    }
+
     getLessons(id) {
         return axios.get(`lessons/${id}`)
     }

@@ -3,6 +3,7 @@ require('../models/connectDB')
 const { ObjectId } = require('mongodb')
 const Lesson = require('../models/Lesson')
 const Tutorial = require('../models/Tutorial')
+const Users = require('../models/Users')
 
 //GET LESSONS FOR TUTORIAL
 exports.Lesson = async (req, res) => {
@@ -66,6 +67,13 @@ exports.saveDate = async (req, res) => {
   try {
     const id = req.params.id
     const tutorialId = req.body.tutorialId
+    // const token = req.cookies.token;
+    // console.log(req.cookies)
+    // if (!token) return res.json(false);
+    // let userId = jwt.verify(token, process.env.TOKEN_SECRET);
+    let userId = '621790ee6afd8fc5bf7c11f6'
+
+    console.log(userId)
 
     //DATETIME NOT AVAILABLE ANYMORE
     const Tutorials = await Tutorial.find({ _id: tutorialId })
@@ -78,17 +86,25 @@ exports.saveDate = async (req, res) => {
     Tutorials[0].dateTime = dateTimeTutorial
     const newTutorial = await Tutorial.findByIdAndUpdate({ _id: tutorialId }, Tutorials[0])
 
+
+    //ADD LESSON TO PROFILE
+    const TheUser = await Users.find({ _id: userId })
+    
+
     //CHOOSE A DATETIME FOR THE LESSON
     const Lessons = await Lesson.find({ _id: id })
       .populate({ path: 'tutorial', model: 'Tutorial' })
       .populate({ path: 'trainee.userId', model: 'Users' })
 
-    // let userId = '621790ee6afd8fc5bf7c11f6'
-    const token = req.cookies.token;
-    if (!token) return res.json(false);
-    let userId = jwt.verify(token, process.env.TOKEN_SECRET);
+      let NewLesson = TheUser[0]
+      NewLesson.myLessons.push({"lessonId": ObjectId(id), "chosenDateTime": req.body.dateTime})
+
+      const newUserLesson = await Users.findByIdAndUpdate({ _id: userId }, NewLesson)
+      console.log("THE USERS", newUserLesson)
 
     
+
+
     let traineeDate = { "userId": ObjectId(userId), "chosenDate": req.body.dateTime, "done": false }
     Lessons[0].trainee.push(traineeDate)
     const newLesson = await Lesson.findByIdAndUpdate({ _id: id }, Lessons[0])

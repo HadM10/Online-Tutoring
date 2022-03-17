@@ -8,6 +8,9 @@ router.route('/')
     .get(tutorialController.Tutorials)
     .post(tutorialController.uploadPhoto, tutorialController.addTutorial)
 
+router.route('/latest')
+    .get(tutorialController.latestTutorials)
+
 router.route('/:id')
     .delete(tutorialController.deleteTutorial)
     .put(tutorialController.editTutorial)

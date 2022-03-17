@@ -15,6 +15,17 @@ exports.Tutorials = async (req, res) => {
   }
 }
 
+exports.latestTutorials = async (req, res) => {
+  try {
+    const tutorials = await Tutorial.find().limit(3)
+      .populate({ path: 'trainerId', model: 'Users' })
+      .populate({ path: 'subCategories', model: 'SubCategory' })
+    res.json(tutorials);
+  } catch (error) {
+    res.status(404).json({ message: error })
+  }
+}
+
 //GET TUTORIALS BY SUBCATEGORY
 exports.Tutorial = async (req, res) => {
   try {
