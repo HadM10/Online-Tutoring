@@ -148,6 +148,12 @@ const ProfileTrainee = () => {
 
 	}
 
+	const TrainerLessons = () => {
+		return (
+			<></>
+		)
+	}
+
 	return (
 		<div className="profile-show">
 

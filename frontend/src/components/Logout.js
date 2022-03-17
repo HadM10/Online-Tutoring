@@ -3,6 +3,7 @@ import React, { useContext } from "react";
 import AuthContext from "../services/AuthContext";
 import { useNavigate} from "react-router-dom";
 import "../css/Logout.css"
+import { ReactSession } from 'react-client-session';
 
 
 function LogOutBtn() {
@@ -14,6 +15,7 @@ function LogOutBtn() {
      await axios.get("http://localhost:5000/users/logout");
    
     await getLoggedIn();
+    // localStorage.removeItem('email');
     getLoggedIn();
     navigate("/");
   }
