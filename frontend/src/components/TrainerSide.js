@@ -9,30 +9,36 @@ import '../css/TrainerSide.css'
 function TrainerSide() {
     const [tutorials, setTutorials] = useState([]);
     const subCategories = useParams().id
-    const [date_Time, setDate_time ] = useState({
-        DateTime: ''
-    })
+    const [date_Time, setDate_time ] = useState('')
 
     useEffect(() => {
         retrieveTutorials()
     }, []);
 
-    const handleChange = (e) => {
-        setDate_time({ ...date_Time, [e.target.name]: e.target.value });
-    }
 
-    const handleSubmit = e => {
-        e.preventDefault()
+    const handleSubmit = (id) => {
+        // e.preventDefault()
 
+if(!date_Time){
+    alert("Please add a DateTime")
+}
+else{
     const datetimeData = {
-        DateTime: date_Time.DateTime
+        DateTime: date_Time,
+        available: true
     }
+
+    console.log(datetimeData)
 
     axios
-    .post("http://localhost:5000/tutorials/", datetimeData)
+    .post(`http://localhost:5000/tutorials/addDateTime/${id}`, {'datetime' : datetimeData})
     .then((response) => {
       console.log(response.status)
     })
+    .catch((error) => {
+        console.log(error);
+    });
+}
 }
 
     const retrieveTutorials = () => {
@@ -69,9 +75,9 @@ function TrainerSide() {
                             <ul className="all-the-datetimes"><span style={{}}>MY SCHEDULE</span> {Tutorial.dateTime.map((dayData, i) => {return dayData.available === false? <li key={i} value={dayData.DateTime}> {dayData.DateTime}</li> : '' })}</ul>
                             <br></br>
                             
-                            <form onSubmit={handleSubmit} className="add-new-datetime">
-                            <input type="text" className="register-Input-phone  datetime-input" name="DateTime" onChange={handleChange} placeholder='Add a new DateTime' value={Tutorial.dateTime.DateTime} />
-                            <input className='add-datetime' type='submit' value="Submit" />
+                            <form className="add-new-datetime">
+                            <input type="text" className="register-Input-phone  datetime-input" name="DateTime" onChange={(e) => setDate_time(e.target.value)} placeholder='Add a new DateTime' value={date_Time}/>
+                            <button className='add-datetime' type='button' value="Submit" onClick={() => handleSubmit(Tutorial._id)}/>
                             </form>
                             </div>
                             <Link className='link-categories' to={`lessons/${Tutorial._id}`}>

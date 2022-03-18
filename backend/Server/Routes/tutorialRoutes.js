@@ -14,6 +14,9 @@ router.route('/latest')
 router.route('/trainer')
     .get(tutorialController.trainerTutorials)
 
+    router.route('/addDateTime/:id')
+    .post(tutorialController.addDateTime)
+
 router.route('/:id')
     .delete(tutorialController.deleteTutorial)
     .put(tutorialController.editTutorial)

@@ -50,6 +50,24 @@ exports.Tutorial = async (req, res) => {
   }
 }
 
+//ADD NEW DATETIME
+exports.addDateTime = async (req, res) => {
+  const dateTime = req.body.datetime
+  const id = req.params.id
+  console.log(' the date time', dateTime)
+  console.log(id);
+  const tutorial = await Tutorial.find({_id: id})
+  console.log(tutorial)
+  tutorial[0].dateTime.push(dateTime)
+  console.log(tutorial)
+  try {
+    const updateTutorial = await Tutorial.findByIdAndUpdate({ _id: id }, tutorial[0]);
+    res.json(updateTutorial);
+  } catch (error) {
+    res.status(400).json({ message: error })
+  }
+
+  }
 
 //ADD OR POST TUTORIAL
 exports.uploadPhoto = useUpload.upload.single('photo')
