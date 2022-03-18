@@ -8,6 +8,7 @@ function SubCategories() {
     const categoryId = useParams().id
 
     useEffect(() => {
+        window.scrollTo(0, 0);
         retrieveSubCategories()
     }, []);
 
@@ -41,7 +42,7 @@ function SubCategories() {
     return (
 
         <div>
-            <div className='subCategory-banner'><img className='subCategory-banner-image' src='https://cdn1.byjus.com/the-learning-tree/wp-content/uploads/2019/10/09072017/hobby_blog-banner.jpg'></img>
+            <div className='subCategory-banner'><img className='subCategory-banner-image' src={window.location.origin + '/music-hero-01.png'}></img>
             <div className="subCategory-banner--fadeBottom"></div>
             </div >
             <h1 className='get-started'>Let's Get Started!</h1>

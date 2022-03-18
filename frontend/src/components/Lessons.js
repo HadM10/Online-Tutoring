@@ -16,13 +16,15 @@ function Lessons() {
     const { loggedIn } = useContext(AuthContext);
 
     ReactSession.setStoreType("localStorage");
-	const username = ReactSession.get("email");
-	console.log(username)
+    const username = ReactSession.get("email");
+    console.log(username)
 
 
     useEffect(() => {
+        window.scrollTo(0, 0);
         retrieveLessons()
         Payed()
+
     }, []);
 
     const [payed, handlePayed] = useState(false);
@@ -48,21 +50,21 @@ function Lessons() {
     }
 
     const confirmLesson = (id, e) => {
-        if(dates && dates !== 0){
+        if (dates && dates !== 0) {
             // setConfirmed(true)
             // document.getElementById("confirmButton").style.display = "none";
             // document.getElementById("done").style.display = "block";
             //SEND DATES AND LESSON_ID AND TUTORIAL_ID
-            Backend.saveDateTime({"dateTime": dates, "tutorialId": tutorialId}, id)
-            .then(response => {
-                console.log(response.data)
-            })
-            .catch(e => {
-                console.log(e)
-            })
-    }
-        
-        else{
+            Backend.saveDateTime({ "dateTime": dates, "tutorialId": tutorialId }, id)
+                .then(response => {
+                    console.log(response.data)
+                })
+                .catch(e => {
+                    console.log(e)
+                })
+        }
+
+        else {
             //choose a date
             alert("choose a date")
         }
@@ -99,7 +101,7 @@ function Lessons() {
                                 <div className="dayData">
                                     {console.log(dates)}
                                     <select className='date-button-lesson' onChange={(e) => setDates(e.target.value)}> <option key={-1} value={0}>Choose DateTime</option>
-                                        {Lesson.tutorial.dateTime.map((dayData, i) => { return dayData.available === true? <option key={i} value={dayData.DateTime}> {dayData.DateTime}</option>: '' })}
+                                        {Lesson.tutorial.dateTime.map((dayData, i) => { return dayData.available === true ? <option key={i} value={dayData.DateTime}> {dayData.DateTime}</option> : '' })}
                                     </select>
                                 </div>
                                 <div className='lesson-start'>
@@ -116,7 +118,7 @@ function Lessons() {
     }
     return (
         <div>
-            <div className='subCategory-banner'><img className='subCategory-banner-image' src='https://cdn1.byjus.com/the-learning-tree/wp-content/uploads/2019/10/09072017/hobby_blog-banner.jpg'></img>
+            <div className='subCategory-banner'><img className='subCategory-banner-image' src={window.location.origin + '/music-hero-01.png'}></img>
                 <div className="subCategory-banner--fadeBottom"></div>
             </div >
             <h1 className='get-started'>Let's Get Started!</h1>

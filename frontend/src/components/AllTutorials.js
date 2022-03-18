@@ -9,6 +9,7 @@ function AllTutorials() {
     const [tutorials, setTutorials] = useState([]);
 
     useEffect(() => {
+        window.scrollTo(0, 0);
         retrieveTutorials()
     }, []);
 
