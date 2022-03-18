@@ -11,6 +11,7 @@ const AlertStyle = {
 
 const ProfileTrainee = () => {
 	const [profiles, setProfiles] = useState([])
+
 	const [user, setUser] = useState({
 		fname: profiles.fname,
 		lname: profiles.lname,
@@ -21,6 +22,8 @@ const ProfileTrainee = () => {
 		country: profiles.country,
 		userType: profiles.userType,
 	})
+
+	const [lessons, setLessons] = useState([])
 
 	ReactSession.setStoreType("localStorage");
 	const username = ReactSession.get("email");
@@ -42,18 +45,19 @@ const ProfileTrainee = () => {
 	};
 	const getProfile = () => {
 		axios.get('http://localhost:5000/users/?email=' + username)
-			.then(response => {
-				setProfiles(response.data)
+			.then(response1 => {
+				setProfiles(response1.data)
 			})
 			.catch(error => {
-				console.log(error)
+				console.log("Get Profile not working")
 			})
 	}
 
+
 	const patchProfile = () => {
 		axios.put('http://localhost:5000/users/?email=' + username, userData)
-			.then(response => {
-				setUser(response.data)
+			.then(response2 => {
+				setUser(response2.data)
 				setErrorMessage(("Updated successfully"));
 				setClassName("alert alert-success")
 				document.getElementsByClassName("alert alert-success")[0].style.display = 'block';
@@ -65,10 +69,31 @@ const ProfileTrainee = () => {
 			})
 	}
 
+	const uniqueprofileID = profiles.map((profileID) =>{
+		return profileID._id
+	})
+	const getLessons = () => {
+
+		axios.get('http://localhost:5000/lessons/?id=' + uniqueprofileID )
+			.then(response3 => {
+				setLessons(response3.data)
+				console.log(response3.data)
+			})
+			.catch(error => {
+			
+				console.log("Get lessons not working")
+			})
+		}
+	
+		
+
 	useEffect(() => {
 		getProfile()
-		patchProfile()
+		// patchProfile()
+		getLessons()
 	}, []);
+
+	console.log(profiles)
 
 	const [errorMessage, setErrorMessage] = useState('');
 
@@ -80,17 +105,14 @@ const ProfileTrainee = () => {
 
 	const handleSubmit = e => {
 		e.preventDefault()
-
-
-
-
 	};
+
 	const ViewProfile = () => {
 		return (
 			profiles.map((profile) => {
 				return (
 					<div className="profile-content">
-						<h1>Profile</h1>
+						<h3 className="profile-title">My Profile</h3>
 						<img className="profile-photo" src={profile.photo} />
 						<p className="profile-text"><strong>First Name:</strong> {profile.fname}</p>
 						<p className="profile-text"><strong>Last Name:</strong> {profile.lname}</p>
@@ -109,7 +131,7 @@ const ProfileTrainee = () => {
 		return (
 			<div className="profile-edit-div" >
 				<form onSubmit={handleSubmit} className="profile-edit" >
-					<h3>My Profile</h3>
+					<h3>Edit Profile</h3>
 					<div className={className} style={AlertStyle} role="alert">{errorMessage}  </div>
 					<select className="Profile-label" id="Trainee" name="userType" onChange={handleChange} value={user.userType}>
 						<option value="">User Type</option>
@@ -148,18 +170,33 @@ const ProfileTrainee = () => {
 
 	}
 
+
 	const TrainerLessons = () => {
 		return (
-			<></>
+			lessons.map((lessonID) => {
+				console.log(lessonID)
+				return (
+			<table className="profile-table">
+				 <tr>
+				<td>Lesson Name:<strong> {lessonID.description}</strong> </td>
+				</tr>
+			</table>
 		)
-	}
+	})
+		)
+}
 
 	return (
+		<>
 		<div className="profile-show">
-
 			{ViewProfile()}
 			{EditProfile()}
+			<div className="profile-tutorials">
+			<h3 className="profile-lesson-title">Lessons Taken</h3>
+			{TrainerLessons()}
+			</div>
 		</div>
+		</>
 	)
 
 }

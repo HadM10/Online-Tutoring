@@ -18,6 +18,18 @@ exports.Lesson = async (req, res) => {
   }
 }
 
+//GET ID FOR Trainee Profile
+exports.LessonID = async (req, res) => {
+  try {
+    const queryLessonId = req.query.id;
+
+    const Lessons = await Lesson.find({'trainee.userId':queryLessonId})
+    res.json(Lessons);
+  } catch (error) {
+    res.status(404).json({ message: "error1" })
+  }
+}
+
 // ADD OR POST LESSON
 exports.addLesson = async (req, res) => {
   const newLesson = new Lesson({
