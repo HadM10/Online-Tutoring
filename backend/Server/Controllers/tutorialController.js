@@ -28,7 +28,7 @@ exports.latestTutorials = async (req, res) => {
 
 exports.trainerTutorials = async (req, res) => {
   try {
-    const tutorials = await Tutorial.find({trainerId: "621756fef9d0fad3f1688d1f"})
+    const tutorials = await Tutorial.find({trainerId: "6235b68298b3e635c04fff34"})
       .populate({ path: 'trainerId', model: 'Users' })
       .populate({ path: 'subCategories', model: 'SubCategory' })
     res.json(tutorials);
