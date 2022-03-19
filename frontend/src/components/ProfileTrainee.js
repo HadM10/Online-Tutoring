@@ -3,11 +3,12 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../css/ProfileTrainee.css";
 import { ReactSession } from 'react-client-session';
+import $ from "jquery";
 
 
 const AlertStyle = {
 	display: "none"
-  }
+}
 
 const ProfileTrainee = () => {
 	const [profiles, setProfiles] = useState([])
@@ -64,32 +65,33 @@ const ProfileTrainee = () => {
 				navigate("/profile");
 			})
 			.catch(e => {
-			
+
 				console.log(e)
 			})
 	}
 
-	const uniqueprofileID = profiles.map((profileID) =>{
-		return profileID._id
-	})
-	const getLessons = () => {
 
-		axios.get('http://localhost:5000/lessons/?id=' + uniqueprofileID )
-			.then(response3 => {
-				setLessons(response3.data)
-				console.log(response3.data)
-			})
-			.catch(error => {
-			
-				console.log("Get lessons not working")
-			})
-		}
-	
-		
+	const getLessons = () => {
+		profiles.map((profileID) => {
+
+
+
+			axios.get('http://localhost:5000/lessons/?id=' + profileID._id)
+				.then(response3 => {
+					setLessons(response3.data)
+					console.log(response3.data)
+				})
+				.catch(error => {
+
+					console.log("Get lessons not working")
+				})
+		})
+	}
+
+
 
 	useEffect(() => {
 		getProfile()
-		// patchProfile()
 		getLessons()
 	}, []);
 
@@ -120,6 +122,13 @@ const ProfileTrainee = () => {
 						<p className="profile-text"><strong>Age:</strong> {profile.age}</p>
 						<p className="profile-text"><strong>Country:</strong> {profile.country}</p>
 						<p className="profile-text"><strong>UserType:</strong> {profile.userType}</p>
+						{profiles.map((profileUserType) => {
+							if (profileUserType.userType === "Trainer")
+								return (<Link to={`/trainer`}>
+									<input className='traineebtnSave1' type="submit" value="My Courses"></input>
+								</Link>)
+						})}
+
 						{/* <div>{profile.myLessons[0].lessonId.title}</div> */}
 					</div>
 				)
@@ -164,36 +173,41 @@ const ProfileTrainee = () => {
 
 
 				</form>
-				
+
 			</div>
 		)
 
 	}
-
+	
 
 	const TrainerLessons = () => {
 		return (
 			lessons.map((lessonID) => {
-				console.log(lessonID)
 				return (
-			<table className="profile-table">
-				 <tr>
-				<td>Lesson Name:<strong> {lessonID.description}</strong> </td>
-				</tr>
-			</table>
+					<table className="profile-table">
+						<tr>
+							<td className="tabletd1">Name:<strong> {lessonID.description}</strong> </td>
+							<td className="tabletd2">Number:<strong> {lessonID.title}</strong> </td>
+							<td className="tabletd3">Date:<strong> {lessonID.trainee.map((eachTrainee) => {
+								if (eachTrainee.userId === "621790ee6afd8fc5bf7c11f6")
+									return eachTrainee.chosenDate.substring(0, 28)
+							})
+							}</strong> </td>
+						</tr>
+					</table>
+				)
+			})
 		)
-	})
-		)
-}
+	}
+
 
 	return (
 		<>
-		<div className="profile-show">
-			{ViewProfile()}
-			{EditProfile()}
-			<div className="profile-tutorials">
-			<h3 className="profile-lesson-title">Lessons Taken</h3>
-			{TrainerLessons()}
+			<div className="profile-show">
+				{ViewProfile()}
+				<div className="profile-tutorials">
+				<h3 className="profile-lesson-title">Lessons Taken</h3>
+					{TrainerLessons()}	
 			</div>
 		</div>
 		</>
