@@ -92,7 +92,7 @@ const ProfileTrainee = () => {
 
 	useEffect(() => {
 		getProfile()
-		getLessons()
+		
 	}, []);
 
 	console.log(profiles)
@@ -108,6 +108,7 @@ const ProfileTrainee = () => {
 	const handleSubmit = e => {
 		e.preventDefault()
 	};
+	getLessons()
 
 	const ViewProfile = () => {
 		return (
@@ -128,6 +129,7 @@ const ProfileTrainee = () => {
 						<p className="profile-text"><strong>Country:</strong> {profile.country}</p>
 						<p className="profile-text"><strong>UserType:</strong> {profile.userType}</p>
 						</div>
+						
 						{profiles.map((profileUserType) => {
 							if (profileUserType.userType === "Trainer")
 								return (<Link to={`/trainer`}>

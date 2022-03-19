@@ -53,7 +53,7 @@ else{
     }
     const displayTutorials = () => {
         return (
-            tutorials.map((Tutorial) => {
+            tutorials.map((Tutorial, i) => {
                 return (
                     <>
                         <div class="card">
