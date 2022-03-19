@@ -43,11 +43,9 @@
     flex-direction: row;
     margin: auto;
     height: 700px;
-    margin-top: 50px;
+    margin-top: -3px;
     margin-bottom: 200px;
-    width: 80%;
-    justify-content: space-around;
-    
+    justify-content: space-around; 
  
 }
 
@@ -55,7 +53,6 @@
     width: 230px;
     height: 200px;
     border-radius: 10%;
-    margin-top: 35px;
     margin-bottom: 25px;
     margin: auto;
     margin-right: 30px;
@@ -96,13 +93,24 @@
 
 .traineebtnSave1{
     width: 220px;
-    margin-top: 25px;
+    margin-top: 500px;
+    margin-left: -300px;
     height: 35px;
     border: none;
-    background: transparent linear-gradient(293deg, #302113 0%, #904414 100%) 0% 0% no-repeat padding-box;
+    background: transparent linear-gradient(293deg, #302113 0%, #2c190c 100%) 0% 0% no-repeat padding-box;
     box-shadow: 0px 0px 12px #0000005C;
-    color:white;
+    color:wheat;
+    transition-timing-function: all ease-in;
+    transition: 1s;
+    border-radius: 2vw;
+    height: 40px;
 }
+
+.traineebtnSave1:hover{
+    transform: scale(1.08);
+    cursor: pointer;
+}
+
 
 .alert-danger1{
     color: #823200;
