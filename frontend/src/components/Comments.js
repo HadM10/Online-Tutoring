@@ -7,7 +7,7 @@ function TraineeComments() {
             <>
                 <div className="comment-box"  >
                     <div className="comment--collectionpictures">
-                        <img className="comment--picture" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrJZTUP6x0wf971Bz8Y2Y0nrllmqbhqtRp4w&usqp=CAU" alt={"photo not available"} />
+                        <img className="comment--picture" src="https://publichealth.uga.edu/wp-content/uploads/2020/01/Thomas-Cameron_Student_Profile.jpg" alt={"photo not available"} />
                         <img className="comment--sidepicture" src="https://www.dummies.com/wp-content/uploads/494382.image1.jpg" alt={"photo not available"} />
                     </div>
                     <p className="comment--linedivider"> _________________________________________ </p>
@@ -17,7 +17,7 @@ function TraineeComments() {
 
                 <div className="comment-box"  >
                     <div className="comment--collectionpictures">
-                        <img className="comment--picture" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrJZTUP6x0wf971Bz8Y2Y0nrllmqbhqtRp4w&usqp=CAU" alt={"photo not available"} />
+                        <img className="comment--picture" src="https://www.bayleybulletin.com/wp-content/uploads/2016/08/Ashlynn-Fayth-Smith-900.jpg" alt={"photo not available"} />
                         <img className="comment--sidepicture" src="https://www.dummies.com/wp-content/uploads/494382.image1.jpg" alt={"photo not available"} />
                     </div>
                     <p className="comment--linedivider"> _________________________________________ </p>
@@ -27,7 +27,7 @@ function TraineeComments() {
 
                 <div className="comment-box"  >
                     <div className="comment--collectionpictures">
-                        <img className="comment--picture" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrJZTUP6x0wf971Bz8Y2Y0nrllmqbhqtRp4w&usqp=CAU" alt={"photo not available"} />
+                        <img className="comment--picture" src="https://vrs.amsi.org.au/wp-content/uploads/sites/84/2017/12/tobinsouth_vrs_2017-18.jpeg" alt={"photo not available"} />
                         <img className="comment--sidepicture" src="https://www.dummies.com/wp-content/uploads/494382.image1.jpg" alt={"photo not available"} />
                     </div>
                     <p className="comment--linedivider"> _________________________________________ </p>

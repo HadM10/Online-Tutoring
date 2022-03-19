@@ -12,7 +12,7 @@ router.route('/')
 router.route('/:id')
     .delete(lessonController.deleteLesson)
     .put(lessonController.editLesson)
- 
+    .get(lessonController.Lesson)
     
     
     

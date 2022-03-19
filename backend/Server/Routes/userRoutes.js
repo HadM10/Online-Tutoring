@@ -127,6 +127,6 @@ router
   .delete(userController.deleteUser);
 
   router.route("/").get(userController.findEmail)
-  router.route("/").put(userController.updateUser)
+  router.route("/:id").put(userController.updateUser)
 
 module.exports = router;
