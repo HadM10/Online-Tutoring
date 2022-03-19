@@ -113,15 +113,21 @@ const ProfileTrainee = () => {
 		return (
 			profiles.map((profile) => {
 				return (
+					
+					<div>
 					<div className="profile-content">
-						<h3 className="profile-title">My Profile</h3>
+						
+					<h2 className="profile-title">My Profile</h2>
+					<div className="profile-content-row">
 						<img className="profile-photo" src={profile.photo} />
+						<div>
 						<p className="profile-text"><strong>First Name:</strong> {profile.fname}</p>
 						<p className="profile-text"><strong>Last Name:</strong> {profile.lname}</p>
 						<p className="profile-text"><strong>Email:</strong> {profile.email}</p>
 						<p className="profile-text"><strong>Age:</strong> {profile.age}</p>
 						<p className="profile-text"><strong>Country:</strong> {profile.country}</p>
 						<p className="profile-text"><strong>UserType:</strong> {profile.userType}</p>
+						</div>
 						{profiles.map((profileUserType) => {
 							if (profileUserType.userType === "Trainer")
 								return (<Link to={`/trainer`}>
@@ -130,6 +136,8 @@ const ProfileTrainee = () => {
 						})}
 
 						{/* <div>{profile.myLessons[0].lessonId.title}</div> */}
+					</div>
+					</div>
 					</div>
 				)
 			})
@@ -202,15 +210,17 @@ const ProfileTrainee = () => {
 
 
 	return (
-		<>
+		<div>
 			<div className="profile-show">
+				
 				{ViewProfile()}
 				<div className="profile-tutorials">
 				<h3 className="profile-lesson-title">Lessons Taken</h3>
 					{TrainerLessons()}	
 			</div>
 		</div>
-		</>
+		</div>
+		
 	)
 
 }

@@ -77,7 +77,7 @@ else{
                             
                             <form className="add-new-datetime">
                             <input type="text" className="register-Input-phone  datetime-input" name="DateTime" onChange={(e) => setDate_time(e.target.value)} placeholder='Add a new DateTime' value={date_Time}/>
-                            <button className='add-datetime' type='button' value="Submit" onClick={() => handleSubmit(Tutorial._id)}/>
+                            <button className='add-datetime' type='button' value="Submit" onClick={() => handleSubmit(Tutorial._id)}>Add DateTime</button>
                             </form>
                             </div>
                             <Link className='link-categories' to={`lessons/${Tutorial._id}`}>

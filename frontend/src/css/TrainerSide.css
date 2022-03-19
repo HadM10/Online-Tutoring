@@ -34,7 +34,7 @@
     background: linear-gradient(#171009c0, #654321);
     text-align: center;
     height: 40px;
-    width: 30%;
+    width: auto;
     object-fit: contain;
     transition-timing-function: ease-in;
     transition: all 1s;

@@ -79,7 +79,7 @@ const handleSubmit = e =>{
         <div className={className} style={AlertStyle} role="alert">{errorMessage} </div>
         <form className="signin-form" onSubmit={handleSubmit} >
             <input className="signin-Input" type="email" id="register-email" name="email" placeholder='Enter your email'  onChange={handleChange} value={user.email}></input>
-            <input className="signin-Input" type="password" id="register-password" name="password" onChange={handleChange} value={user.password}></input>
+            <input className="signin-Input" type="password" id="register-password" name="password" placeholder='********' onChange={handleChange} value={user.password}></input>
         <div className='signin-ligne'>
                 <input className='signin-join-Now' type='submit' value="Login" />
                 <div className='singn-register-block'>Don't have an account? <br></br><Link className='sign-register-link' to={"/Register"}>Please Register </Link> </div>
