@@ -150,7 +150,8 @@
 .tabletd1{
     overflow: hidden;
     text-overflow: ellipsis;
-    width: 200px;
+    width: auto;
+    padding-right: 30px;
 }
 
 

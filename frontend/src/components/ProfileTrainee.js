@@ -196,13 +196,13 @@ const ProfileTrainee = () => {
 				return (
 					<table className="profile-table">
 						<tr>
-							<td className="tabletd1">Name:<strong> {lessonID.description}</strong> </td>
-							<td className="tabletd2">Number:<strong> {lessonID.title}</strong> </td>
-							<td className="tabletd3">Date:<strong> {lessonID.trainee.map((eachTrainee) => {
+							<td className="tabletd1"><strong>{lessonID.title}:</strong>  {lessonID.description}</td>
+							
+							<td className="tabletd3"><strong>Date:</strong> {lessonID.trainee.map((eachTrainee) => {
 								if (eachTrainee.userId === "621790ee6afd8fc5bf7c11f6")
 									return eachTrainee.chosenDate.substring(0, 28)
 							})
-							}</strong> </td>
+							} </td>
 						</tr>
 					</table>
 				)
@@ -217,7 +217,7 @@ const ProfileTrainee = () => {
 				
 				{ViewProfile()}
 				<div className="profile-tutorials">
-				<h3 className="profile-lesson-title">Lessons Taken</h3>
+				<h3 className="profile-lesson-title">My Lessons</h3>
 					{TrainerLessons()}	
 			</div>
 		</div>
