@@ -37,6 +37,8 @@ const Payment = () => {
   return (
     <div >
       <img className='payment-image' src={window.location.origin + '/music hero-05.png'} alt='payment'></img>
+
+    
     <div className="credit-card">
       <div className="rccs__card rccs__card--unknown">
         <Cards
