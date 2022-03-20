@@ -67,7 +67,7 @@ const inputDateTime = (e) =>{
     }
     return (
         <div>
-            <div className='tutorial-banner'> <img className='tutorial-banner-image' src='https://t4.ftcdn.net/jpg/01/65/87/51/240_F_165875182_bzOhEp77wKqWSNuo3D5CGH2PrqGfRZUt.jpg'></img>
+            <div className='tutorial-banner'> <img className='tutorial-banner-image' src='../music hero-10.png'></img>
             <div className="tutorial-banner--fadeBottom"></div>
             </div>
             <h1 className='get-started'>My Tutorials</h1>
