@@ -19,6 +19,7 @@ import { AuthContextProvider } from './services/AuthContext.js';
 import AllTutorials from "./components/AllTutorials";
 import ProfileTrainee from "./components/ProfileTrainee";
 import TrainerSide from "./components/TrainerSide"
+import Categories from "./components/Categories"
 
 axios.defaults.withCredentials = true;
 
@@ -47,6 +48,7 @@ function App() {
           <Route path={"/"} element={<Home />} />
           <Route path={"/tutorials"} element={<AllTutorials />} />
           <Route path={"/trainer"} element={<TrainerSide />} />
+          <Route path={"/categories"} element={<Categories />} />
           <Route path={"/login"} element={<Signin />} />
           <Route path={"/register"} element={<Register />} />
           <Route path={"/profile"} element={<ProfileTrainee />} />

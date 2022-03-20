@@ -22,8 +22,8 @@ function Navbar() {
 
     return (
 
-        <div>
-            <Nav className={`nav ${show && 'nav_wood'}`} defaultSelected="Home">
+        <div >
+            <Nav id="navbar" className={`nav ${show && 'nav_wood'}`} defaultSelected="Home">
                 <NavItem eventKey="Logo">
                     <Link to={"/"} className='logo'>
                         <h1>TutoMania</h1>
@@ -41,8 +41,8 @@ function Navbar() {
                         </Link>
                     </NavItem>
                     <NavItem eventKey="Aboutus">
-                        <Link to={"/trainer"} className="nav-items">
-                            <span>About Us</span>
+                        <Link to={"/categories"} className="nav-items">
+                            <span>Category</span>
                         </Link>
                     </NavItem>
                     {loggedIn === false && (
