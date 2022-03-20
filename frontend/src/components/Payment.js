@@ -39,8 +39,8 @@ const Payment = () => {
 }
 
   return (
-    <div style={{marginTop: "-100px"}}>
-     <div> <img className='payment-image' src={window.location.origin + '/music hero-05.png'} alt='payment'></img></div>
+    <div style={{marginTop: ""}}>
+     <div> <img width='100%' height='740px' className='payment-image' src={window.location.origin + '/music hero-05.png'} alt='payment'></img></div>
 
     <div className="credit-card" style={{marginTop: "300px !important"}}>
       <div className="rccs__card rccs__card--unknown">
