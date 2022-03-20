@@ -1,6 +1,13 @@
 body{
     background-color: rgb(189, 149, 77);
 }
+
+.preloader-logo{
+  width: 50%;
+  margin: auto;
+  margin-top: 220px;
+  margin-left: 490px;
+}
 .nfLoader {
     position: absolute;
     top: 50%;

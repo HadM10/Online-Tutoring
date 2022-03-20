@@ -10,7 +10,7 @@
     margin: 0px;
     opacity: 0.8;
     position: absolute;  
-    margin-left: -53px !important;
+    margin-left: -65px !important;
  }
 
 
@@ -59,19 +59,18 @@
     flex-direction: row;
     margin: auto;
     height: 700px;
+    margin-bottom: 100px;
     justify-content: space-around; 
     padding-left: 5px;
  
 }
 
 .profile-photo{
-    width: 230px;
-    height: 200px;
+    width: 40%;
+    height: 250px;
     border-radius: 10%;
-    margin-bottom: 25px;
-    margin: auto;
-    margin-right: 30px;
-    margin-left: 30px;
+    margin: 20px;
+    
 }
 
 .profile-text{
