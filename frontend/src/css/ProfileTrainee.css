@@ -143,11 +143,12 @@
     flex-direction: column;
     align-items: center;
     width: 550px;
-    height: auto;
+    height:fit-content;
     background-color: white;
     box-shadow: 6px 0px 12px #000000A3;
     margin-top: 100px;
     margin-left: -40px;
+    margin-bottom: 50px;
     border-radius: 5px;
 }
 
@@ -159,6 +160,8 @@
     margin-left: 5px;
     cursor: pointer;   
     border-radius: 5px;
+    margin-bottom: 30px;
+    
 }
 
 .profile-table:hover{

@@ -92,7 +92,7 @@ const ProfileTrainee = () => {
 
 	useEffect(() => {
 		getProfile()
-		
+		window.scrollTo(0, 0);
 	}, []);
 
 	console.log(profiles)
