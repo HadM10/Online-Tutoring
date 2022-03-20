@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Cards from "react-credit-cards";
 import "react-credit-cards/es/styles-compiled.css";
 import { useNavigate, Link, useParams } from 'react-router-dom'
@@ -21,10 +21,6 @@ const Payment = () => {
 
   const navigate = useNavigate();
 
-  useEffect(() => {
-		window.scrollTo(0, 0);
-	}, []);
-
   const checkout = () => {
 
     const pay = async (e) => {
@@ -39,10 +35,11 @@ const Payment = () => {
 }
 
   return (
-    <div style={{marginTop: "-100px"}}>
-     <div> <img className='payment-image' src={window.location.origin + '/music hero-05.png'} alt='payment'></img></div>
+    <div >
+      <img className='payment-image' src={window.location.origin + '/music hero-05.png'} alt='payment'></img>
 
-    <div className="credit-card" style={{marginTop: "300px !important"}}>
+    
+    <div className="credit-card">
       <div className="rccs__card rccs__card--unknown">
         <Cards
           number={number}
@@ -155,7 +152,7 @@ const Payment = () => {
               type="tel"
               name="cvc"
               maxlength="3"
-              className=" form-control2 cvvstyle card"
+              className=" form-control2 card"
               value={cvc}
               pattern="\d*"
               onChange={(e) => {

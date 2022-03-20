@@ -92,7 +92,7 @@ const ProfileTrainee = () => {
 
 	useEffect(() => {
 		getProfile()
-		
+		window.scrollTo(0, 0);
 	}, []);
 
 	console.log(profiles)
@@ -114,33 +114,36 @@ const ProfileTrainee = () => {
 		return (
 			profiles.map((profile) => {
 				return (
-					
 					<div>
-					<div className="profile-content">
-						
-					<h2 className="profile-title">My Profile</h2>
-					<div className="profile-content-row">
-						<img className="profile-photo" src={profile.photo} />
-						<div>
-						<p className="profile-text"><strong>First Name:</strong> {profile.fname}</p>
-						<p className="profile-text"><strong>Last Name:</strong> {profile.lname}</p>
-						<p className="profile-text"><strong>Email:</strong> {profile.email}</p>
-						<p className="profile-text"><strong>Age:</strong> {profile.age}</p>
-						<p className="profile-text"><strong>Country:</strong> {profile.country}</p>
-						<p className="profile-text"><strong>UserType:</strong> {profile.userType}</p>
-						</div>
-						
-						{profiles.map((profileUserType) => {
-							if (profileUserType.userType === "Trainer")
-								return (<Link to={`/trainer`}>
-									<input className='traineebtnSave1' type="submit" value="My Courses"></input>
-								</Link>)
-						})}
+						<img className='imgbackprof' src={window.location.origin + '/music hero-06.png'} alt='Profile'></img>
+					<div>
 
-						{/* <div>{profile.myLessons[0].lessonId.title}</div> */}
+						<div className="profile-content">
+						<h2 className="profile-title">My Profile</h2>
+						<div className="profile-content-row">
+							<img className="profile-photo" src={profile.photo} alt="" />
+							<div>
+							<p className="profile-text"><strong>First Name:</strong> {profile.fname}</p>
+							<p className="profile-text"><strong>Last Name:</strong> {profile.lname}</p>
+							<p className="profile-text"><strong>Email:</strong> {profile.email}</p>
+							<p className="profile-text"><strong>Age:</strong> {profile.age}</p>
+							<p className="profile-text"><strong>Country:</strong> {profile.country}</p>
+							<p className="profile-text"><strong>UserType:</strong> {profile.userType}</p>
+							</div>
+							
+							{profiles.map((profileUserType) => {
+								if (profileUserType.userType === "Trainer")
+									return (<Link to={`/trainer`}>
+										<input className='traineebtnSave1' type="submit" value="My Courses"></input>
+									</Link>)
+							})}
+
+							{/* <div>{profile.myLessons[0].lessonId.title}</div> */}
+						</div>
+						</div>
 					</div>
 					</div>
-					</div>
+
 				)
 			})
 		)
