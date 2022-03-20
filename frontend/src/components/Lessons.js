@@ -24,6 +24,7 @@ function Lessons() {
         window.scrollTo(0, 0);
         retrieveLessons()
         Payed()
+        // localStorage.clear();
 
     }, []);
 
