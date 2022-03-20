@@ -13,9 +13,7 @@ function LogOutBtn() {
 
   async function logOut() {
      await axios.get("http://localhost:5000/users/logout");
-   
-    await getLoggedIn();
-    // localStorage.removeItem('email');
+     window.localStorage.clear();
     getLoggedIn();
     navigate("/");
   }
