@@ -30,7 +30,7 @@ function App() {
         document.getElementById('preloader').style.display = 'none';
         document.getElementById('allWebsite').style.display = 'block';
         clearInterval(interval)
-      }, 2000)
+      }, 1500)
     }
     preloader();
   }, []);
