@@ -26,7 +26,7 @@ function Navbar() {
             <Nav className={`nav ${show && 'nav_wood'}`} defaultSelected="Home">
                 <NavItem eventKey="Logo">
                     <Link to={"/"} className='logo'>
-                        <h1>TutoMania</h1>
+                    <img style={{marginTop: "25px"}} width='200px' height='auto' src="../logo tutomania 4-01 - Copy.png"></img>
                     </Link>
                 </NavItem>
                 <div className='nav-components'>

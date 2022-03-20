@@ -30,7 +30,7 @@ function App() {
         document.getElementById('preloader').style.display = 'none';
         document.getElementById('allWebsite').style.display = 'block';
         clearInterval(interval)
-      }, 1000)
+      }, 2000)
     }
     preloader();
   }, []);
@@ -38,6 +38,7 @@ function App() {
   return (
     <div className="App">
       <div id="preloader">
+        <div className="preloader-logo"><img width='350px' height='auto' src="../logo tutomania 4-01.png"></img></div>
         <div id="loader" class="nfLoader"></div>
       </div>
       <div id='allWebsite' style={{ display: "none" }}>
